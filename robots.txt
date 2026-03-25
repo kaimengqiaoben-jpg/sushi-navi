@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sushi-navi-8zj8dq1st-kaimengqiaoben-jpgs-projects.vercel.app/sitemap.xml
