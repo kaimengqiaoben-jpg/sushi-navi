@@ -2,6 +2,16 @@
 // 寿司職人ナビ - メインJS
 // =====================
 
+// Google AdSense 自動広告（全ページ共通）
+// ※ ca-pub-XXXXXXXXXXXXXXXXXX を自分のパブリッシャーIDに差し替えること
+(function() {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6253147532269621';
+  s.setAttribute('crossorigin', 'anonymous');
+  document.head.appendChild(s);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ハンバーガーメニュー
