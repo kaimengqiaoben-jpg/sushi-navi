@@ -1,9 +1,16 @@
 // note有料記事ハブ用データ。SITE_DESIGN.md ⑧「note導線」参照。
 //
-// TODO(カイムさん): 各記事の url を note.com 上の「公開URL」（https://note.com/ユーザー名/n/xxxxxxxx の形式）に置き換えてください。
-// note_post_queue.json にある editor.note.com/notes/.../publish/ は編集画面のURLで、
-// 公開ページのURLではないため、そのままここには使えません。
-// note.com のダッシュボードから「記事を見る」で開くURLをコピーしてください。
+// 2026-09-10: note.com上の実際の公開状態を確認し、確認できたものだけ url を設定済み。
+// アカウント: https://note.com/modern_roses2643 （プロフィール名「寿司職人ナビ」＝旧サイト名のまま。
+// TODO: SUSHIDOブランドに合わせてnote側のプロフィールも更新すると導線が綺麗になる）
+//
+// 注記: 02・03（費用シミュレーション／ブラック店チェックリスト）は投稿時に有料設定が失敗し、
+// 実際には無料公開になっている（note_post_log.txt で確認）。price は実際の価格に合わせてある。
+// note.com側で200円に設定し直せば price を書き換えるだけで反映される。
+//
+// url が null の記事は、投稿ログ上「下書きのまま」または「未投稿」（最終公開ボタンが見つからず失敗、
+// または一度もキューに入っていない）で、公開URLが確認できていないもの。
+// note.comのダッシュボードで実際に公開されていることを確認できたら url を埋めてください。
 
 export interface NoteArticle {
   title: string;
@@ -13,15 +20,45 @@ export interface NoteArticle {
 }
 
 export const noteArticles: NoteArticle[] = [
-  { title: '未経験から寿司職人になる方法【完全ロードマップ】', price: '無料', url: null, category: 'free' },
+  {
+    title: '未経験から寿司職人になる方法【完全ロードマップ】',
+    price: '無料',
+    url: 'https://note.com/modern_roses2643/n/nb173df126476',
+    category: 'free',
+  },
   { title: '寿司職人転職完全ガイド｜スクール選び・費用・就職まで', price: '500円', url: null, category: 'single' },
   { title: '寿司職人として海外移住・海外就職する完全マニュアル', price: '1,000円', url: null, category: 'single' },
   { title: '寿司職人の面接で落ちない答え方【想定問答10問テンプレート付き】', price: '200円', url: null, category: 'single' },
-  { title: '寿司スクール費用シミュレーション：給付金使うと実質いくら？', price: '200円', url: null, category: 'single' },
-  { title: 'ブラック寿司店を見抜く20のチェックリスト', price: '200円', url: null, category: 'single' },
-  { title: '寿司職人転職の履歴書・職務経歴書テンプレート', price: '200円', url: null, category: 'single' },
-  { title: '寿司店入社後の給与交渉マニュアル', price: '200円', url: null, category: 'single' },
-  { title: '出張寿司を最速で始める手順書', price: '200円', url: null, category: 'single' },
+  {
+    title: '寿司スクール費用シミュレーション：給付金使うと実質いくら？',
+    price: '無料', // 本来200円想定だったが有料設定が失敗し無料公開中
+    url: 'https://note.com/modern_roses2643/n/n6fbdeb14df3a',
+    category: 'free',
+  },
+  {
+    title: 'ブラック寿司店を見抜く20のチェックリスト',
+    price: '無料', // 本来200円想定だったが有料設定が失敗し無料公開中
+    url: 'https://note.com/modern_roses2643/n/nf6aac2eef858',
+    category: 'free',
+  },
+  {
+    title: '寿司職人転職の履歴書・職務経歴書テンプレート',
+    price: '200円',
+    url: 'https://note.com/modern_roses2643/n/ncf9a048ad279',
+    category: 'single',
+  },
+  {
+    title: '寿司店入社後の給与交渉マニュアル',
+    price: '200円',
+    url: 'https://note.com/modern_roses2643/n/nd1593b0f5063',
+    category: 'single',
+  },
+  {
+    title: '出張寿司を最速で始める手順書',
+    price: '200円',
+    url: 'https://note.com/modern_roses2643/n/n55f2e9dad24a',
+    category: 'single',
+  },
   { title: '寿司職人のInstagramフォロワーを3ヶ月で1000人にする投稿戦略', price: '200円', url: null, category: 'single' },
   { title: 'ハローワークで給付金を申請する全手順', price: '200円', url: null, category: 'single' },
   { title: 'プロのシャリの作り方【酢の割合・温度・米の炊き方】完全レシピ', price: '200円', url: null, category: 'single' },
