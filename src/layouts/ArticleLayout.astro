@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import AuthorBox from '../components/AuthorBox.astro';
-import { authors } from '../data/authors';
+import { site } from '../data/authors';
 import { categories, type CategorySlug } from '../data/categories';
 
 interface Props {
@@ -11,25 +11,21 @@ interface Props {
   slug: string;
   publishedAt: Date;
   updatedAt: Date;
-  author?: string;
   hero?: string;
   heroAlt?: string;
   faq?: { q: string; a: string }[];
 }
 
-const { title, description, category, slug, publishedAt, updatedAt, author = 'kaimu', hero, heroAlt, faq } = Astro.props;
+const { title, description, category, slug, publishedAt, updatedAt, hero, heroAlt, faq } = Astro.props;
 const cat = categories[category];
-const authorData = authors[author as keyof typeof authors] ?? authors.kaimu;
 const canonicalPath = `/${category}/${slug}/`;
 const pageUrl = new URL(canonicalPath, Astro.site).toString();
 
-const personJsonLd = {
-  '@type': 'Person',
-  name: authorData.name,
-  jobTitle: authorData.jobTitle,
-  ...(authorData.noteUrl || authorData.xUrl
-    ? { sameAs: [authorData.noteUrl, authorData.xUrl].filter(Boolean) }
-    : {}),
+// 個人名は出さない方針のため、著者は Person ではなく Organization（屋号）として構造化データを出す。
+const publisherJsonLd = {
+  '@type': 'Organization',
+  name: site.entityName,
+  ...(site.noteUrl || site.xUrl ? { sameAs: [site.noteUrl, site.xUrl].filter(Boolean) } : {}),
 };
 
 const articleJsonLd = {
@@ -39,7 +35,8 @@ const articleJsonLd = {
   description,
   datePublished: publishedAt.toISOString(),
   dateModified: updatedAt.toISOString(),
-  author: personJsonLd,
+  author: publisherJsonLd,
+  publisher: publisherJsonLd,
   ...(hero ? { image: new URL(hero, Astro.site).toString() } : {}),
 };
 

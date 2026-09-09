@@ -1,19 +1,17 @@
 ---
-import { authors } from '../data/authors';
-
-const author = authors.kaimu;
+import { site } from '../data/authors';
 ---
 
 <div class="flex gap-4 items-start border border-line bg-paper-alt p-5">
   <div class="w-14 h-14 shrink-0 bg-line flex items-center justify-center text-ink-40 text-xs">
-    {author.avatarImage ? <img src={author.avatarImage} alt={author.name} class="w-14 h-14 object-cover" /> : '写真'}
+    {site.avatarImage ? <img src={site.avatarImage} alt={site.entityName} class="w-14 h-14 object-cover" /> : '写真'}
   </div>
   <div>
     <p class="text-sm text-ink">
-      <span class="font-semibold">{author.name}</span>
-      <span class="text-ink-40 text-xs ml-1">{author.workshopName}</span>
+      <span class="font-semibold">{site.entityName}</span>
+      <span class="text-ink-40 text-xs ml-1">{site.jobTitle}が個人運営</span>
     </p>
-    <p class="text-ink-70 text-sm mt-1 leading-relaxed">{author.bioShort}</p>
-    <a href="/about/" class="text-xs text-accent border-b border-accent mt-2 inline-block">プロフィールを見る →</a>
+    <p class="text-ink-70 text-sm mt-1 leading-relaxed">{site.bioShort}</p>
+    <a href="/about/" class="text-xs text-accent border-b border-accent mt-2 inline-block">運営者について見る →</a>
   </div>
 </div>

@@ -9,7 +9,6 @@ const articleSchema = z.object({
   tags: z.array(z.string()).default([]),
   publishedAt: z.coerce.date(),
   updatedAt: z.coerce.date(),
-  author: z.string().default('kaimu'),
   hero: z.string().optional(),
   heroAlt: z.string().optional(),
   type: z.enum(['pillar', 'review', 'guide', 'experience', 'glossary']).default('guide'),
