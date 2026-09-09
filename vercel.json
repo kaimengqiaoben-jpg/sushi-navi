@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    { "source": "/articles/how-to-become-sushi-chef.html", "destination": "/career/how-to-become/", "permanent": true },
+    { "source": "/articles/sushi-chef-salary.html", "destination": "/career/salary/", "permanent": true },
+    { "source": "/articles/no-apprenticeship.html", "destination": "/career/apprenticeship-years/", "permanent": true },
+    { "source": "/articles/daily-work.html", "destination": "/career/daily-routine/", "permanent": true },
+    { "source": "/articles/career-change-beginner.html", "destination": "/career/beginner-career-change/", "permanent": true },
+    { "source": "/articles/career-30s.html", "destination": "/career/from-30s/", "permanent": true },
+    { "source": "/articles/women-sushi-chef.html", "destination": "/career/women/", "permanent": true },
+    { "source": "/articles/license-guide.html", "destination": "/career/license/", "permanent": true },
+    { "source": "/articles/knife-recommend.html", "destination": "/tools/knife-recommend/", "permanent": true },
+    { "source": "/articles/sushi-tools-amazon.html", "destination": "/tools/essential-tools/", "permanent": true },
+    { "source": "/articles/sushi-uniform-amazon.html", "destination": "/tools/samue-uniform/", "permanent": true },
+    { "source": "/articles/overseas-sushi-chef.html", "destination": "/overseas/how-to-work-abroad/", "permanent": true },
+    { "source": "/articles/independent-guide.html", "destination": "/management/independence/", "permanent": true },
+    { "source": "/articles/delivery-sushi-business.html", "destination": "/management/delivery-business/", "permanent": true },
+    { "source": "/articles/school-tokyo-sushi.html", "destination": "/career/school/tokyo-sushi/", "permanent": true },
+    { "source": "/articles/school-tsuji.html", "destination": "/career/school/tsuji/", "permanent": true },
+    { "source": "/articles/school-sushi-academy.html", "destination": "/career/school/sushi-academy/", "permanent": true },
+    { "source": "/articles/school-inshokujin.html", "destination": "/career/school/inshokujin/", "permanent": true },
+    { "source": "/articles/school-online.html", "destination": "/career/school/online/", "permanent": true },
+    { "source": "/articles/sushi-school-compare.html", "destination": "/career/school/compare/", "permanent": true },
+    { "source": "/articles/school-cost.html", "destination": "/career/school/cost/", "permanent": true },
+    { "source": "/about.html", "destination": "/about/", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact/", "permanent": true },
+    { "source": "/privacy.html", "destination": "/privacy/", "permanent": true },
+    { "source": "/affiliate.html", "destination": "/disclosure/", "permanent": true }
+  ]
+}

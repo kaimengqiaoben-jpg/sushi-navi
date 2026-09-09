@@ -1,0 +1,71 @@
+---
+// TODO(カイムさん): src/data/authors.ts の TODO 項目（経験年数・業態・地域・海外経験・資格・失敗談・note/X URL・写真）
+// を埋めると、このページに自動で反映されます。SITE_DESIGN.md ⑤ 参照。
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { authors } from '../../data/authors';
+
+const a = authors.kaimu;
+const facts = [
+  a.experienceYears ? { label: '経験年数', value: `板場に立って${a.experienceYears}年` } : null,
+  a.style ? { label: '業態', value: a.style } : null,
+  a.region ? { label: '活動地域', value: a.region } : null,
+  a.overseasExperience ? { label: '海外経験', value: a.overseasExperience } : null,
+  a.qualifications.length ? { label: '資格', value: a.qualifications.join('・') } : null,
+].filter(Boolean) as { label: string; value: string }[];
+---
+
+<BaseLayout title="運営者について" description="鮨道 SUSHIDO の運営者情報です。現役の寿司職人が個人で運営しています。">
+  <article class="mx-auto max-w-2xl px-5 py-20 md:py-28">
+    <p class="font-display italic text-gold text-sm tracking-widest mb-4">ABOUT</p>
+    <h1 class="font-serif text-3xl md:text-4xl text-ink mb-10">運営者について</h1>
+
+    <div class="flex items-center gap-4 mb-10">
+      <div class="w-16 h-16 shrink-0 bg-line flex items-center justify-center text-ink-40 text-xs">
+        {a.avatarImage ? <img src={a.avatarImage} alt={a.name} class="w-16 h-16 object-cover" /> : '写真'}
+      </div>
+      <div>
+        <p class="font-serif text-xl text-ink">{a.name}</p>
+        <p class="text-ink-40 text-xs">{a.workshopName}</p>
+      </div>
+    </div>
+
+    <div class="prose prose-sushido max-w-none prose-headings:font-serif prose-p:text-ink-70 prose-p:leading-loose prose-a:text-accent">
+      <p>
+        「鮨道（SUSHIDO）」は、現役の寿司職人である「カイム」が個人で運営しているメディアです。編集部のような組織はなく、板場に立つ一人の職人が、実務の言葉で技術・道具・キャリア・海外・経営について記録しています。
+      </p>
+
+      {
+        facts.length > 0 && (
+          <table>
+            <tbody>
+              {facts.map((f) => (
+                <tr>
+                  <th class="text-left pr-4 whitespace-nowrap">{f.label}</th>
+                  <td>{f.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )
+      }
+
+      {a.failureStory && <p>{a.failureStory}</p>}
+
+      <h2>本名・顔・店名を出さない理由</h2>
+      <p>
+        現在の勤務先や同僚に配慮し、本名・顔写真・店名は公開していません。その代わりに、手元や道具の写真、実務に基づいた具体的な数字を通じて、実在する現役の職人が書いていることを伝えるようにしています。
+      </p>
+
+      <h2>発信している場所</h2>
+      <ul>
+        <li>このサイト（鮨道 SUSHIDO）</li>
+        {a.noteUrl && <li><a href={a.noteUrl} target="_blank" rel="noopener">note</a></li>}
+        {a.xUrl && <li><a href={a.xUrl} target="_blank" rel="noopener">X（旧Twitter）</a></li>}
+      </ul>
+
+      <p>
+        記事のレビュー基準については<a href="/editorial-policy/">編集方針</a>にまとめています。お問い合わせは<a href="/contact/">こちら</a>から受け付けています。
+      </p>
+    </div>
+  </article>
+</BaseLayout>

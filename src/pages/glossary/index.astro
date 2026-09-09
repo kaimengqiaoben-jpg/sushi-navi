@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const terms = await getCollection('glossary');
+terms.sort((a, b) => a.data.term.localeCompare(b.data.term, 'ja'));
+---
+
+<BaseLayout title="用語辞典" description="寿司職人が使う用語を1語ずつ解説する辞典です。「がり」「あがり」「づけ」など、現場の言葉を記録していきます。">
+  <section class="mx-auto max-w-3xl px-5 py-20">
+    <p class="font-display italic text-gold text-sm tracking-widest mb-4">GLOSSARY</p>
+    <h1 class="font-serif text-3xl md:text-4xl text-ink mb-8">用語辞典</h1>
+    <p class="text-ink-70 leading-loose mb-12">
+      寿司職人が現場で使う言葉を、1語ずつ短く解説していきます。記事本文からもこの辞典にリンクしています。
+    </p>
+
+    {
+      terms.length === 0 ? (
+        <p class="text-ink-40 text-sm">現在準備中です。</p>
+      ) : (
+        <ul class="grid gap-px bg-line sm:grid-cols-2">
+          {terms.map((t) => (
+            <li class="bg-paper p-4">
+              <a href={`/glossary/${t.id}/`} class="text-ink hover:text-accent">
+                {t.data.term}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</BaseLayout>

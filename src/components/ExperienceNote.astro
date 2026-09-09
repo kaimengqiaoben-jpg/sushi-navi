@@ -1,0 +1,11 @@
+---
+// 「現場メモ」ブロック。記事本文内で <ExperienceNote> 実測値・一次体験 </ExperienceNote> のように使う。
+// SITE_DESIGN.md ⑫「追加すべきもの」で各記事に最低1ブロック入れる想定。
+---
+
+<div class="my-8 border-l-2 border-accent pl-5 py-1">
+  <p class="text-xs tracking-widest text-accent mb-2">現場メモ</p>
+  <div class="text-ink-70 text-sm leading-relaxed [&>p]:mb-2">
+    <slot />
+  </div>
+</div>

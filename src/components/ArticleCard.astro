@@ -1,0 +1,21 @@
+---
+import { categories, type CategorySlug } from '../data/categories';
+
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  category: CategorySlug;
+  publishedAt: Date;
+}
+
+const { href, title, description, category, publishedAt } = Astro.props;
+const dateStr = publishedAt.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<a href={href} class="group block border-b border-line py-8 first:pt-0">
+  <p class="text-xs tracking-widest text-accent mb-2">{categories[category].label}</p>
+  <h3 class="font-serif text-xl text-ink group-hover:text-accent transition-colors">{title}</h3>
+  <p class="text-ink-70 text-sm mt-2 leading-relaxed max-w-2xl">{description}</p>
+  <p class="text-ink-40 text-xs mt-3">{dateStr}</p>
+</a>

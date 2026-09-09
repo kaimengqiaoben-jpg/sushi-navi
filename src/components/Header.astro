@@ -1,0 +1,54 @@
+---
+import { categoryList } from '../data/categories';
+---
+
+<header class="border-b border-line bg-paper/95 backdrop-blur sticky top-0 z-40">
+  <div class="mx-auto max-w-5xl px-5 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-baseline gap-2 leading-none">
+      <span class="font-serif text-2xl font-semibold tracking-wider text-ink">鮨道</span>
+      <span class="font-display text-xs tracking-[0.2em] text-ink-40">SUSHIDO</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      {
+        categoryList.map((c) => (
+          <a href={c.path} class="text-ink-70 hover:text-accent transition-colors">
+            {c.label}
+          </a>
+        ))
+      }
+      <a href="/note/" class="text-ink-70 hover:text-accent transition-colors">note</a>
+      <a href="/about/" class="text-ink-70 hover:text-accent transition-colors">運営者</a>
+    </nav>
+
+    <button
+      id="menu-toggle"
+      class="md:hidden text-ink-70 text-sm border border-line px-3 py-1.5"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >
+      menu
+    </button>
+  </div>
+
+  <nav id="mobile-nav" class="md:hidden hidden border-t border-line px-5 py-3 flex flex-col gap-3 text-sm">
+    {
+      categoryList.map((c) => (
+        <a href={c.path} class="text-ink-70">
+          {c.label}
+        </a>
+      ))
+    }
+    <a href="/note/" class="text-ink-70">note</a>
+    <a href="/about/" class="text-ink-70">運営者</a>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('mobile-nav');
+  toggle?.addEventListener('click', () => {
+    const isHidden = nav?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isHidden));
+  });
+</script>

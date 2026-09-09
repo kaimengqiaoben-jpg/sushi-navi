@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sushido.jp/sitemap-index.xml

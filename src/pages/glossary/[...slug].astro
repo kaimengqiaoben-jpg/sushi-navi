@@ -1,0 +1,27 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('glossary');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={entry.data.term} description={entry.data.description}>
+  <article class="mx-auto max-w-2xl px-5 py-20">
+    <nav class="text-xs text-ink-40 mb-8 flex gap-2">
+      <a href="/">鮨道</a>
+      <span>/</span>
+      <a href="/glossary/">用語辞典</a>
+    </nav>
+    <h1 class="font-serif text-3xl text-ink mb-2">{entry.data.term}</h1>
+    {entry.data.reading && <p class="text-ink-40 text-sm mb-8">{entry.data.reading}</p>}
+    <div class="prose prose-sushido max-w-none prose-headings:font-serif prose-p:text-ink-70 prose-p:leading-loose prose-a:text-accent">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
