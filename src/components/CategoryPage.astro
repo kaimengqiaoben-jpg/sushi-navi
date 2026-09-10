@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from './ArticleCard.astro';
 import { categories, type CategorySlug } from '../data/categories';
+import { isVisible } from '../lib/content';
 
 interface Props {
   slug: CategorySlug;
@@ -11,7 +12,7 @@ interface Props {
 const { slug } = Astro.props;
 const cat = categories[slug];
 
-const entries = await getCollection(slug, ({ data }) => !data.draft);
+const entries = await getCollection(slug, isVisible);
 entries.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 ---
 

@@ -1,9 +1,10 @@
 ---
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { isVisible } from '../../lib/content';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('overseas', ({ data }) => !data.draft);
+  const entries = await getCollection('overseas', isVisible);
   return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 

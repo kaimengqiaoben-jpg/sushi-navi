@@ -4,13 +4,14 @@ import type { GetStaticPaths } from 'astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import type { CategorySlug } from '../../data/categories';
+import { isVisible } from '../../lib/content';
 
 export const getStaticPaths = (async ({ paginate }) => {
   const CATEGORY_SLUGS = ['technique', 'career', 'tools', 'overseas', 'management'] as const;
   const all = (
     await Promise.all(
       CATEGORY_SLUGS.map(async (slug) => {
-        const entries = await getCollection(slug, ({ data }) => !data.draft);
+        const entries = await getCollection(slug, isVisible);
         return entries.map((entry) => ({
           href: `/${slug}/${entry.id}/`,
           title: entry.data.title,
