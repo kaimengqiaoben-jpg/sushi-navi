@@ -27,12 +27,14 @@ const validPaths = new Set([
 const CATS = ['technique', 'career', 'tools', 'overseas', 'management'];
 const contentFiles = walk(CONTENT).filter((f) => /\.(md|mdx)$/.test(f));
 const bySlug = {};
+const glossaryIds = new Set();
 for (const f of contentFiles) {
   const rel = relative(CONTENT, f).replace(/\\/g, '/');
   const [col, ...rest] = rel.split('/');
   const id = rest.join('/').replace(/\.(md|mdx)$/, '');
   if (col === 'glossary') {
     validPaths.add(`/glossary/${id}/`);
+    glossaryIds.add(id);
   } else if (CATS.includes(col)) {
     validPaths.add(`/${col}/${id}/`);
     (bySlug[col] ||= new Set()).add(id);
@@ -60,16 +62,24 @@ for (const f of contentFiles) {
     }
   }
 
-  // related slugs
-  const rm = src.match(relatedRe);
+  // related / relatedTerms slugs
+  const isGlossary = rel.includes('/glossary/');
+  const rm = src.match(isGlossary ? /relatedTerms:\s*\[([^\]]*)\]/ : relatedRe);
   if (rm) {
     const slugs = rm[1].split(',').map((s) => s.trim().replace(/['"]/g, '')).filter(Boolean);
     for (const s of slugs) {
-      const [col, ...rest] = s.split('/');
-      const id = rest.join('/');
-      if (!bySlug[col]?.has(id)) {
-        console.log(`✗ ${rel}\n    related の参照先が無い: ${s}`);
-        problems++;
+      if (isGlossary) {
+        if (!glossaryIds.has(s)) {
+          console.log(`✗ ${rel}\n    relatedTerms の参照先が無い: ${s}`);
+          problems++;
+        }
+      } else {
+        const [col, ...rest] = s.split('/');
+        const id = rest.join('/');
+        if (!bySlug[col]?.has(id)) {
+          console.log(`✗ ${rel}\n    related の参照先が無い: ${s}`);
+          problems++;
+        }
       }
     }
   }
