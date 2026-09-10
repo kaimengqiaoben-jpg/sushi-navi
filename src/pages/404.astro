@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { categoryList } from '../data/categories';
+---
+
+<BaseLayout title="ページが見つかりません" description="お探しのページは見つかりませんでした。" noindex={true}>
+  <section class="mx-auto max-w-2xl px-5 py-24 md:py-32 text-center">
+    <p class="font-display text-6xl text-gold mb-6">404</p>
+    <h1 class="font-serif text-2xl text-ink mb-4">ページが見つかりません</h1>
+    <p class="text-ink-70 text-sm leading-loose mb-10">
+      お探しのページは移動または削除された可能性があります。以下からお探しください。
+    </p>
+    <div class="flex flex-wrap justify-center gap-3 text-sm">
+      <a href="/" class="border border-line px-4 py-2 hover:bg-paper-alt">トップ</a>
+      {
+        categoryList.map((c) => (
+          <a href={c.path} class="border border-line px-4 py-2 hover:bg-paper-alt">
+            {c.label}
+          </a>
+        ))
+      }
+      <a href="/glossary/" class="border border-line px-4 py-2 hover:bg-paper-alt">用語辞典</a>
+    </div>
+  </section>
+</BaseLayout>
