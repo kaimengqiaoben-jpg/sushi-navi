@@ -1,9 +1,14 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { categoryList } from '../data/categories';
 
 const title = '鮨道 SUSHIDO';
 const description = '現役寿司職人が、板場から書く。技術・道具・キャリア・海外・経営を、実務の言葉で記録する専門メディア。';
+
+const glossary = await getCollection('glossary');
+glossary.sort((a, b) => a.data.term.localeCompare(b.data.term, 'ja'));
+const glossaryPreview = glossary.slice(0, 12);
 ---
 
 <BaseLayout title={title} description={description}>
@@ -40,6 +45,31 @@ const description = '現役寿司職人が、板場から書く。技術・道�
       }
     </div>
   </section>
+
+  {
+    glossaryPreview.length > 0 && (
+      <section class="border-t border-line">
+        <div class="mx-auto max-w-5xl px-5 py-20 md:py-28">
+          <div class="flex items-baseline justify-between mb-8">
+            <p class="text-ink-40 text-xs tracking-widest">GLOSSARY</p>
+            <a href="/glossary/" class="text-xs text-accent border-b border-accent">用語辞典をすべて見る →</a>
+          </div>
+          <p class="text-ink-70 text-sm leading-loose max-w-xl mb-8">
+            寿司職人が現場で使う言葉を、1語ずつ解説しています。
+          </p>
+          <ul class="flex flex-wrap gap-2">
+            {glossaryPreview.map((t) => (
+              <li>
+                <a href={`/glossary/${t.id}/`} class="text-sm border border-line px-3 py-1.5 hover:bg-paper-alt transition-colors">
+                  {t.data.term}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
 
   <section class="border-t border-line bg-paper-alt">
     <div class="mx-auto max-w-5xl px-5 py-20 md:py-28 grid md:grid-cols-[1fr_2fr] gap-10">
