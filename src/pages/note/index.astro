@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { noteArticles, type NoteArticle } from '../../data/noteArticles';
+
+const groups = {
+  free: noteArticles.filter((a) => a.category === 'free'),
+  single: noteArticles.filter((a) => a.category === 'single'),
+  membership: noteArticles.filter((a) => a.category === 'membership'),
+};
+
+const rowClass = 'flex items-center justify-between gap-4 border-b border-line pb-3';
+---
+
+<BaseLayout title="note" description="鮨道 SUSHIDO の運営者が note で公開している有料記事・教材のまとめです。">
+  <section class="mx-auto max-w-3xl px-5 py-20 md:py-28">
+    <p class="font-display italic text-gold text-sm tracking-widest mb-4">NOTE</p>
+    <h1 class="font-serif text-3xl md:text-4xl text-ink mb-6">note — 個人の実践記録</h1>
+    <p class="text-ink-70 leading-loose max-w-xl mb-16">
+      サイトが「教科書」だとすれば、noteは「日記と告白」です。具体的な数字、失敗談、生々しい実践記録は、こちらで公開しています。
+    </p>
+
+    <div class="space-y-16">
+      <div>
+        <p class="text-xs tracking-widest text-ink-40 mb-4">無料記事</p>
+        <ul class="space-y-3">
+          {
+            groups.free.map((a: NoteArticle) => (
+              <li class={rowClass}>
+                {a.url ? (
+                  <a href={a.url} target="_blank" rel="noopener" class="text-ink hover:text-accent text-sm">{a.title}</a>
+                ) : (
+                  <span class="text-ink-40 text-sm">{a.title}</span>
+                )}
+                <span class="text-ink-40 text-xs shrink-0">{a.price}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-xs tracking-widest text-ink-40 mb-4">単品記事</p>
+        <ul class="space-y-3">
+          {
+            groups.single.map((a: NoteArticle) => (
+              <li class={rowClass}>
+                {a.url ? (
+                  <a href={a.url} target="_blank" rel="noopener" class="text-ink hover:text-accent text-sm">{a.title}</a>
+                ) : (
+                  <span class="text-ink-40 text-sm">{a.title}</span>
+                )}
+                <span class="text-ink-40 text-xs shrink-0">{a.price}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-xs tracking-widest text-ink-40 mb-4">会員限定（12週間コース）</p>
+        <ul class="space-y-3">
+          {
+            groups.membership.map((a: NoteArticle) => (
+              <li class={rowClass}>
+                {a.url ? (
+                  <a href={a.url} target="_blank" rel="noopener" class="text-ink hover:text-accent text-sm">{a.title}</a>
+                ) : (
+                  <span class="text-ink-40 text-sm">{a.title}</span>
+                )}
+                <span class="text-ink-40 text-xs shrink-0">{a.price}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

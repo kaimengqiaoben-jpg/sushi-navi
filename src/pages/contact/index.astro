@@ -1,0 +1,33 @@
+---
+// TODO(カイムさん): 問い合わせ用の連絡先を決めてください。
+// - 案A: 公開用に新規メールアドレスを作る（個人のGmail等はそのまま公開しない方が安全）
+// - 案B: Googleフォームを作って埋め込みリンクに差し替える
+// 決まったら下記 CONTACT_EMAIL / CONTACT_FORM_URL を書き換えてください。
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const CONTACT_EMAIL: string | null = null; // TODO
+const CONTACT_FORM_URL: string | null = null; // TODO
+---
+
+<BaseLayout title="お問い合わせ" description="鮨道 SUSHIDO へのお問い合わせページです。">
+  <article class="mx-auto max-w-2xl px-5 py-20 md:py-28">
+    <p class="font-display italic text-gold text-sm tracking-widest mb-4">CONTACT</p>
+    <h1 class="font-serif text-3xl md:text-4xl text-ink mb-10">お問い合わせ</h1>
+
+    <div class="prose prose-sushido max-w-none prose-p:text-ink-70 prose-p:leading-loose prose-a:text-accent">
+      <p>取材・広告掲載・記事内容に関するご連絡は、以下からお願いいたします。</p>
+
+      {
+        CONTACT_FORM_URL ? (
+          <p><a href={CONTACT_FORM_URL} target="_blank" rel="noopener">お問い合わせフォームはこちら</a></p>
+        ) : CONTACT_EMAIL ? (
+          <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+        ) : (
+          <p class="text-ink-40 text-sm">（連絡先を準備中です）</p>
+        )
+      }
+
+      <p>運営者について詳しくは<a href="/about/">こちら</a>をご覧ください。</p>
+    </div>
+  </article>
+</BaseLayout>

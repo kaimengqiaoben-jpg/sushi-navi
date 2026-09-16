@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from './ArticleCard.astro';
+import { categories, type CategorySlug } from '../data/categories';
+import { isVisible } from '../lib/content';
+
+interface Props {
+  slug: CategorySlug;
+}
+
+const { slug } = Astro.props;
+const cat = categories[slug];
+
+const entries = await getCollection(slug, isVisible);
+entries.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+
+<BaseLayout title={cat.label} description={cat.description}>
+  <section class="border-b border-line">
+    <div class="mx-auto max-w-3xl px-5 py-20 md:py-28">
+      <p class="font-display italic text-gold text-sm tracking-widest mb-4">{cat.labelEn}</p>
+      <h1 class="font-serif text-3xl md:text-4xl text-ink mb-8">{cat.label}</h1>
+      <p class="text-ink-70 leading-loose">{cat.intro}</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-5 py-16">
+    {
+      entries.length === 0 ? (
+        <p class="text-ink-40 text-sm">現在準備中です。近日公開します。</p>
+      ) : (
+        entries.map((entry) => (
+          <ArticleCard
+            href={`/${slug}/${entry.id}/`}
+            title={entry.data.title}
+            description={entry.data.description}
+            category={slug}
+            publishedAt={entry.data.publishedAt}
+          />
+        ))
+      )
+    }
+  </section>
+</BaseLayout>

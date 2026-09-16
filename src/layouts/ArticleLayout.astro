@@ -1,0 +1,110 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import AuthorBox from '../components/AuthorBox.astro';
+import { author } from '../data/authors';
+import { categories, type CategorySlug } from '../data/categories';
+
+interface Props {
+  title: string;
+  description: string;
+  category: CategorySlug;
+  slug: string;
+  publishedAt: Date;
+  updatedAt: Date;
+  hero?: string;
+  heroAlt?: string;
+  faq?: { q: string; a: string }[];
+}
+
+const { title, description, category, slug, publishedAt, updatedAt, hero, heroAlt, faq } = Astro.props;
+const cat = categories[category];
+const canonicalPath = `/${category}/${slug}/`;
+const pageUrl = new URL(canonicalPath, Astro.site).toString();
+
+// 2026-09-16: 顔出し・ニックネーム出演の方針に変更したため、著者は Person（kaimu）として構造化データを出す。
+// 発行者（publisher）は引き続き屋号（鮨道編集室）を Organization として出す。
+const authorJsonLd = {
+  '@type': 'Person',
+  name: author.name,
+  jobTitle: author.jobTitle,
+  worksFor: { '@type': 'Organization', name: author.workshopName },
+  ...(author.noteUrl || author.xUrl ? { sameAs: [author.noteUrl, author.xUrl].filter(Boolean) } : {}),
+};
+
+const publisherJsonLd = {
+  '@type': 'Organization',
+  name: author.workshopName,
+};
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: publishedAt.toISOString(),
+  dateModified: updatedAt.toISOString(),
+  author: authorJsonLd,
+  publisher: publisherJsonLd,
+  ...(hero ? { image: new URL(hero, Astro.site).toString() } : {}),
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '鮨道 SUSHIDO', item: new URL('/', Astro.site).toString() },
+    { '@type': 'ListItem', position: 2, name: cat.label, item: new URL(cat.path, Astro.site).toString() },
+    { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
+  ],
+};
+
+const faqJsonLd = faq?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    }
+  : null;
+
+const dateFmt = (d: Date) => d.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout title={title} description={description} ogImage={hero}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+    {faqJsonLd && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />}
+  </Fragment>
+
+  <article class="mx-auto max-w-3xl px-5 py-16 md:py-24">
+    <nav class="text-xs text-ink-40 mb-8 flex gap-2">
+      <a href="/">鮨道</a>
+      <span>/</span>
+      <a href={cat.path}>{cat.label}</a>
+    </nav>
+
+    <h1 class="font-serif text-3xl md:text-4xl text-ink leading-snug mb-4">{title}</h1>
+    <p class="text-ink-40 text-xs mb-8">
+      公開日 {dateFmt(publishedAt)}
+      {updatedAt.getTime() !== publishedAt.getTime() && <> ／ 更新日 {dateFmt(updatedAt)}</>}
+    </p>
+
+    {hero && <img src={hero} alt={heroAlt ?? title} class="w-full aspect-[3/2] object-cover mb-10" loading="eager" />}
+
+    <div class="mb-10">
+      <AuthorBox />
+    </div>
+
+    <div class="prose prose-sushido max-w-none prose-headings:font-serif prose-headings:text-ink prose-p:text-ink-70 prose-p:leading-loose prose-a:text-accent">
+      <slot />
+    </div>
+
+    <div class="mt-14">
+      <AuthorBox />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,36 @@
+---
+// 広告配置ルール（SITE_DESIGN.md ⑦）: 文脈のある位置のみ。全リンクに rel="sponsored nofollow"。
+interface Props {
+  productName: string;
+  amazonUrl?: string;
+  rakutenUrl?: string;
+  yahooUrl?: string;
+  priceNote?: string;
+}
+const { productName, amazonUrl, rakutenUrl, yahooUrl, priceNote } = Astro.props;
+const links = [
+  { label: 'Amazonで見る', url: amazonUrl },
+  { label: '楽天で見る', url: rakutenUrl },
+  { label: 'Yahoo!で見る', url: yahooUrl },
+].filter((l) => l.url);
+---
+
+<div class="my-8 border border-line p-6 bg-paper-alt">
+  <p class="text-xs text-gold tracking-widest mb-1">PR</p>
+  <p class="font-serif text-lg text-ink">{productName}</p>
+  {priceNote && <p class="text-ink-40 text-xs mt-1">{priceNote}</p>}
+  <div class="flex flex-wrap gap-3 mt-4">
+    {
+      links.map((l) => (
+        <a
+          href={l.url}
+          target="_blank"
+          rel="sponsored nofollow noopener"
+          class="text-sm border border-ink px-4 py-2 hover:bg-ink hover:text-paper transition-colors"
+        >
+          {l.label}
+        </a>
+      ))
+    }
+  </div>
+</div>

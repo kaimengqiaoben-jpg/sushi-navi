@@ -1,0 +1,65 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('glossary');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry, entries } }));
+}
+
+const { entry, entries } = Astro.props;
+const { Content } = await render(entry);
+
+const byId = new Map(entries.map((e) => [e.id, e]));
+const related = (entry.data.relatedTerms ?? [])
+  .map((id) => byId.get(id))
+  .filter((e) => e && e.id !== entry.id);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: entry.data.term,
+  description: entry.data.description,
+  inDefinedTermSet: new URL('/glossary/', Astro.site).toString(),
+};
+---
+
+<BaseLayout title={`${entry.data.term}とは`} description={entry.data.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <article class="mx-auto max-w-2xl px-5 py-20">
+    <nav class="text-xs text-ink-40 mb-8 flex gap-2">
+      <a href="/">鮨道</a>
+      <span>/</span>
+      <a href="/glossary/">用語辞典</a>
+    </nav>
+    <h1 class="font-serif text-3xl text-ink mb-2">{entry.data.term}</h1>
+    {entry.data.reading && <p class="text-ink-40 text-sm mb-8">{entry.data.reading}</p>}
+    <div class="prose prose-sushido max-w-none prose-headings:font-serif prose-p:text-ink-70 prose-p:leading-loose prose-a:text-accent">
+      <Content />
+    </div>
+
+    {
+      related.length > 0 && (
+        <div class="mt-14 border-t border-line pt-6">
+          <p class="text-xs tracking-widest text-ink-40 mb-3">関連する用語</p>
+          <ul class="flex flex-wrap gap-2">
+            {related.map((e) => (
+              <li>
+                <a href={`/glossary/${e.id}/`} class="text-sm border border-line px-3 py-1.5 hover:bg-paper-alt">
+                  {e.data.term}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+
+    <p class="mt-10 text-sm">
+      <a href="/glossary/" class="text-accent border-b border-accent">用語辞典の一覧へ</a>
+    </p>
+  </article>
+</BaseLayout>

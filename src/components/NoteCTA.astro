@@ -1,0 +1,17 @@
+---
+interface Props {
+  href: string;
+  label?: string;
+}
+const { href, label = 'noteで詳しく読む' } = Astro.props;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener"
+  class="my-8 flex items-center justify-between border border-ink px-6 py-4 hover:bg-ink hover:text-paper transition-colors"
+>
+  <span class="text-sm">{label}</span>
+  <span class="text-xs">→</span>
+</a>

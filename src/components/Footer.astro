@@ -1,0 +1,50 @@
+---
+import { categoryList } from '../data/categories';
+---
+
+<footer class="border-t border-line mt-24 bg-paper-alt">
+  <div class="mx-auto max-w-5xl px-5 py-16 grid gap-10 md:grid-cols-4 text-sm">
+    <div class="md:col-span-2">
+      <p class="font-serif text-xl tracking-wider text-ink mb-2">鮨道 SUSHIDO</p>
+      <p class="text-ink-70 leading-relaxed max-w-sm">
+        現役寿司職人が、板場から書く。技術・道具・キャリア・海外・経営を、実務の言葉で記録する専門メディアです。
+      </p>
+    </div>
+
+    <div>
+      <p class="text-ink-40 mb-3 text-xs tracking-widest">CATEGORY</p>
+      <ul class="space-y-2">
+        {
+          categoryList.map((c) => (
+            <li>
+              <a href={c.path} class="text-ink-70 hover:text-accent">
+                {c.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-ink-40 mb-3 text-xs tracking-widest">SITE</p>
+      <ul class="space-y-2">
+        <li><a href="/about/" class="text-ink-70 hover:text-accent">運営者について</a></li>
+        <li><a href="/editorial-policy/" class="text-ink-70 hover:text-accent">編集方針</a></li>
+        <li><a href="/note/" class="text-ink-70 hover:text-accent">note</a></li>
+        <li><a href="/glossary/" class="text-ink-70 hover:text-accent">用語辞典</a></li>
+        <li><a href="/rss.xml" class="text-ink-70 hover:text-accent">RSS</a></li>
+        <li><a href="/contact/" class="text-ink-70 hover:text-accent">お問い合わせ</a></li>
+        <li><a href="/disclosure/" class="text-ink-70 hover:text-accent">広告に関する表記</a></li>
+        <li><a href="/privacy/" class="text-ink-70 hover:text-accent">プライバシーポリシー</a></li>
+        <li><a href="/terms/" class="text-ink-70 hover:text-accent">利用規約</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-line">
+    <p class="mx-auto max-w-5xl px-5 py-5 text-xs text-ink-40">
+      &copy; {new Date().getFullYear()} 鮨道編集室
+    </p>
+  </div>
+</footer>

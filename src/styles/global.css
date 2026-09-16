@@ -1,0 +1,63 @@
+/* 鮨道 SUSHIDO — 見出し明朝 × 本文ゴシック。SITE_DESIGN.md ⑩ 参照 */
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* カラーパレット（SITE_DESIGN.md ⑩） */
+  --color-ink: #14110f;
+  --color-ink-70: #4a4542;
+  --color-ink-40: #8c867f;
+  --color-paper: #fbfaf7;
+  --color-paper-alt: #f2efe9;
+  --color-line: #e3dfd7;
+  --color-accent: #8c2318;
+  --color-gold: #a38b5c;
+
+  --font-serif: "Shippori Mincho", "Zen Old Mincho", serif;
+  --font-sans: "Noto Sans JP", sans-serif;
+  --font-display: "Cormorant Garamond", "Shippori Mincho", serif;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  @media (min-width: 768px) {
+    body {
+      font-size: 17px;
+    }
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-paper);
+  }
+}
+
+@layer utilities {
+  .prose-sushido {
+    max-width: 680px;
+  }
+}
