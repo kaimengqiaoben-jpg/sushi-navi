@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import AuthorBox from '../components/AuthorBox.astro';
-import { site } from '../data/authors';
+import { author } from '../data/authors';
 import { categories, type CategorySlug } from '../data/categories';
 
 interface Props {
@@ -21,11 +21,19 @@ const cat = categories[category];
 const canonicalPath = `/${category}/${slug}/`;
 const pageUrl = new URL(canonicalPath, Astro.site).toString();
 
-// 個人名は出さない方針のため、著者は Person ではなく Organization（屋号）として構造化データを出す。
+// 2026-09-16: 顔出し・ニックネーム出演の方針に変更したため、著者は Person（kaimu）として構造化データを出す。
+// 発行者（publisher）は引き続き屋号（鮨道編集室）を Organization として出す。
+const authorJsonLd = {
+  '@type': 'Person',
+  name: author.name,
+  jobTitle: author.jobTitle,
+  worksFor: { '@type': 'Organization', name: author.workshopName },
+  ...(author.noteUrl || author.xUrl ? { sameAs: [author.noteUrl, author.xUrl].filter(Boolean) } : {}),
+};
+
 const publisherJsonLd = {
   '@type': 'Organization',
-  name: site.entityName,
-  ...(site.noteUrl || site.xUrl ? { sameAs: [site.noteUrl, site.xUrl].filter(Boolean) } : {}),
+  name: author.workshopName,
 };
 
 const articleJsonLd = {
@@ -35,7 +43,7 @@ const articleJsonLd = {
   description,
   datePublished: publishedAt.toISOString(),
   dateModified: updatedAt.toISOString(),
-  author: publisherJsonLd,
+  author: authorJsonLd,
   publisher: publisherJsonLd,
   ...(hero ? { image: new URL(hero, Astro.site).toString() } : {}),
 };
