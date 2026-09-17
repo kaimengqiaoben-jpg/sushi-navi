@@ -5,4 +5,4 @@
 // Google Analyticsで新しいプロパティ（データストリーム: ウェブ、URL は
 // https://sushi-blog-five.vercel.app）を作成すると発行される。
 // 取得したらここに文字列として貼り付けるだけで、全ページで計測が始まる。
-export const GA_MEASUREMENT_ID: string | null = null;
+export const GA_MEASUREMENT_ID: string | null = 'G-8Q6G703G6E';
