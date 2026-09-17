@@ -23,3 +23,5 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+note_session.json
+note_debug*.png
