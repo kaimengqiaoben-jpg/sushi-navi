@@ -24,12 +24,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="alternate" type="application/rss+xml" title="鮨道 SUSHIDO" href={new URL('/rss.xml', Astro.site)} />
+    {/* 旧サイト（同じVercelドメイン）でSearch Console検証済みのタグ。ここで途切れさせると検証が外れるため必ず残す */}
+    <meta name="google-site-verification" content="57eRw7EtpjlOwnR4dbyI9rmRnCdVYIzurW4FC3ZOQ8s" />
     {noindex && <meta name="robots" content="noindex,nofollow" />}
 
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
 
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />

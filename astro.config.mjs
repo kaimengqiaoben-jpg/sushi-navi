@@ -6,10 +6,11 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
-// NOTE: site は sushido.jp 取得後にそのまま有効化される想定（現状は仮値）。
-// ドメイン確定後、Vercel側のカスタムドメイン設定と合わせて変更不要。
+// NOTE: 2026-09-17時点、sushido.jp は未取得のため実際の公開URL（Vercelデフォルトドメイン）を使用。
+// sushido.jp を取得してVercelにカスタムドメイン接続したら、ここを 'https://sushido.jp' に戻すこと
+// （canonical/sitemap/OGP/RSSが全部このURLを基準に生成される）。
 export default defineConfig({
-  site: 'https://sushido.jp',
+  site: 'https://sushi-blog-five.vercel.app',
   vite: {
     plugins: [tailwindcss()]
   },

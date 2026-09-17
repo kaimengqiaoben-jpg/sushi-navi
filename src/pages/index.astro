@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { categoryList } from '../data/categories';
+import { author } from '../data/authors';
 
 const title = '鮨道 SUSHIDO';
 const description = '現役寿司職人が、板場から書く。技術・道具・キャリア・海外・経営を、実務の言葉で記録する専門メディア。';
@@ -9,9 +10,26 @@ const description = '現役寿司職人が、板場から書く。技術・道�
 const glossary = await getCollection('glossary');
 glossary.sort((a, b) => a.data.term.localeCompare(b.data.term, 'ja'));
 const glossaryPreview = glossary.slice(0, 12);
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: title,
+  url: Astro.site?.toString(),
+  description,
+  inLanguage: 'ja',
+  publisher: {
+    '@type': 'Organization',
+    name: author.workshopName,
+    founder: { '@type': 'Person', name: author.name, jobTitle: author.jobTitle },
+  },
+};
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+  </Fragment>
   <!--
     TODO(カイムさん): ヒーロー画像を撮影して差し替えてください（手元・板場・包丁など）。
     SITE_DESIGN.md ⑩「写真について」参照。画像がないうちは文字だけの構成にしています。
