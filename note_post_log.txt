@@ -178,3 +178,102 @@ Call log:
 [2026-08-22 12:54:12] ログインが完了すると自動的に検知してセッションを保存します（キー操作は不要です）。
 [2026-08-22 12:54:12] 最大10分待ちます。
 [2026-08-22 13:04:34] タイムアウトしました（現在のURL: https://note.com/login）。ログインを確認してもう一度お試しください。
+[2026-09-18 00:26:52] 投稿対象がありません（全件投稿済みか、キューが空です）
+[2026-09-18 00:27:05] 投稿対象: 1件
+[2026-09-18 00:27:11] セッション確認OK
+[2026-09-18 00:27:11]   投稿開始: 寿司職人のInstagramフォロワーを3ヶ月で1000人にする投稿戦略
+[2026-09-18 00:27:14]   現在のURL: https://note.com/login?redirectPath=/notes/new
+[2026-09-18 00:27:15]   タイトル入力エリアが見つかりません。スキップします。
+[2026-09-18 00:27:15] === 全投稿完了 ===
+[2026-09-18 00:27:15] 投稿済み: 5件
+[2026-09-18 00:27:15]   02_cost_simulation.md → https://editor.note.com/notes/n6fbdeb14df3a/publish/
+[2026-09-18 00:27:15]   03_black_shop_check.md → https://editor.note.com/notes/nf6aac2eef858/publish/
+[2026-09-18 00:27:15]   04_resume_template.md → https://editor.note.com/notes/ncf9a048ad279/publish/
+[2026-09-18 00:27:15]   05_salary_negotiation.md → https://editor.note.com/notes/nd1593b0f5063/publish/
+[2026-09-18 00:27:15]   06_delivery_sushi_start.md → https://editor.note.com/notes/n55f2e9dad24a/publish/
+[2026-09-18 00:27:50] === セッション保存モード ===
+[2026-09-18 00:27:50] ブラウザが開きます。手動でnote.comにログインしてください。
+[2026-09-18 00:27:50] ログインが完了すると自動的に検知してセッションを保存します（キー操作は不要です）。
+[2026-09-18 00:27:50] 最大10分待ちます。
+[2026-09-18 00:37:51] タイムアウトしました（現在のURL: https://note.com/login）。ログインを確認してもう一度お試しください。
+[2026-09-18 00:45:59] === セッション保存モード ===
+[2026-09-18 00:45:59] ブラウザが開きます。手動でnote.comにログインしてください。
+[2026-09-18 00:45:59] ログインが完了すると自動的に検知してセッションを保存します（キー操作は不要です）。
+[2026-09-18 00:45:59] 最大10分待ちます。
+[2026-09-18 00:53:23] === セッション保存モード ===
+[2026-09-18 00:53:23] ブラウザが開きます。手動でnote.comにログインしてください。
+[2026-09-18 00:53:23] ログインが完了すると自動的に検知してセッションを保存します（キー操作は不要です）。
+[2026-09-18 00:53:23] 最大10分待ちます。
+[2026-09-18 00:56:19] タイムアウトしました（現在のURL: https://note.com/login）。ログインを確認してもう一度お試しください。
+[2026-09-18 01:03:26] タイムアウトしました（現在のURL: https://note.com/login）。ログインを確認してもう一度お試しください。
+[2026-09-18 01:37:38] === セッション保存モード ===
+[2026-09-18 01:37:38] ブラウザが開きます。手動でnote.comにログインしてください。
+[2026-09-18 01:37:38] ログインが完了すると自動的に検知してセッションを保存します（キー操作は不要です）。
+[2026-09-18 01:37:38] 最大10分待ちます。
+[2026-09-18 01:48:13] タイムアウトしました（現在のURL: https://note.com/login）。ログインを確認してもう一度お試しください。
+[2026-09-18 01:57:05] 投稿対象がありません（全件投稿済みか、キューが空です）
+[2026-09-18 01:57:20] 投稿対象: 1件
+[2026-09-18 01:57:25] セッション確認OK
+[2026-09-18 01:57:25]   投稿開始: 寿司職人のInstagramフォロワーを3ヶ月で1000人にする投稿戦略
+[2026-09-18 01:57:30]   現在のURL: https://editor.note.com/notes/n9ac6e4950dc7/edit/
+[2026-09-18 01:57:30]   タイトル入力OK（[placeholder="記事タイトル"]）
+[2026-09-18 01:57:40]   価格200円設定OK
+[2026-09-18 01:57:42]   タグ入力OK
+[2026-09-18 01:57:48]   投稿完了: https://editor.note.com/notes/n9ac6e4950dc7/publish/
+[2026-09-18 01:57:51] === 全投稿完了 ===
+[2026-09-18 01:57:51] 投稿済み: 6件
+[2026-09-18 01:57:51]   02_cost_simulation.md → https://editor.note.com/notes/n6fbdeb14df3a/publish/
+[2026-09-18 01:57:51]   03_black_shop_check.md → https://editor.note.com/notes/nf6aac2eef858/publish/
+[2026-09-18 01:57:51]   04_resume_template.md → https://editor.note.com/notes/ncf9a048ad279/publish/
+[2026-09-18 01:57:51]   05_salary_negotiation.md → https://editor.note.com/notes/nd1593b0f5063/publish/
+[2026-09-18 01:57:51]   06_delivery_sushi_start.md → https://editor.note.com/notes/n55f2e9dad24a/publish/
+[2026-09-18 01:57:51]   07_instagram_sushi.md → https://editor.note.com/notes/n9ac6e4950dc7/publish/
+[2026-09-18 01:58:06] 投稿対象: 5件
+[2026-09-18 01:58:11] セッション確認OK
+[2026-09-18 01:58:11]   投稿開始: ハローワークで給付金を申請する全手順【当日の流れ・必要書類一覧】
+[2026-09-18 01:58:15]   現在のURL: https://editor.note.com/notes/ndb5bffbb73a7/edit/
+[2026-09-18 01:58:16]   タイトル入力OK（[placeholder="記事タイトル"]）
+[2026-09-18 01:58:26]   価格200円設定OK
+[2026-09-18 01:58:28]   タグ入力OK
+[2026-09-18 01:58:34]   投稿完了: https://editor.note.com/notes/ndb5bffbb73a7/publish/
+[2026-09-18 01:58:36]   次の投稿まで60秒待機...
+[2026-09-18 01:59:36]   投稿開始: プロのシャリの作り方【酢の割合・温度・米の炊き方】完全レシピ
+[2026-09-18 01:59:39]   現在のURL: https://editor.note.com/notes/n3860ab6063d7/edit/
+[2026-09-18 01:59:40]   タイトル入力OK（[placeholder="記事タイトル"]）
+[2026-09-18 01:59:49]   価格200円設定OK
+[2026-09-18 01:59:52]   タグ入力OK
+[2026-09-18 01:59:57]   投稿完了: https://editor.note.com/notes/n3860ab6063d7/publish/
+[2026-09-18 01:59:59]   次の投稿まで60秒待機...
+[2026-09-18 02:00:59]   投稿開始: 寿司職人の包丁メンテナンス完全ガイド【毎日の手入れ〜本砥ぎまで】
+[2026-09-18 02:01:03]   現在のURL: https://editor.note.com/notes/n238ac2c894e7/edit/
+[2026-09-18 02:01:04]   タイトル入力OK（[placeholder="記事タイトル"]）
+[2026-09-18 02:01:13]   価格200円設定OK
+[2026-09-18 02:01:15]   タグ入力OK
+[2026-09-18 02:01:21]   投稿完了: https://editor.note.com/notes/n238ac2c894e7/publish/
+[2026-09-18 02:01:23]   次の投稿まで60秒待機...
+[2026-09-18 02:02:23]   投稿開始: 30代から寿司職人になった人のリアル体験談まとめ【成功パターン5選】
+[2026-09-18 02:02:27]   現在のURL: https://editor.note.com/notes/nd9b0e541fb03/edit/
+[2026-09-18 02:02:27]   タイトル入力OK（[placeholder="記事タイトル"]）
+[2026-09-18 02:02:37]   価格200円設定OK
+[2026-09-18 02:02:39]   タグ入力OK
+[2026-09-18 02:02:45]   投稿完了: https://editor.note.com/notes/nd9b0e541fb03/publish/
+[2026-09-18 02:02:47]   次の投稿まで60秒待機...
+[2026-09-18 02:03:47]   投稿開始: 主要寿司スクール3校を実際に見学してわかったこと【比較レポート】
+[2026-09-18 02:03:50]   現在のURL: https://editor.note.com/notes/nf4b4d94bbb5c/edit/
+[2026-09-18 02:03:51]   タイトル入力OK（[placeholder="記事タイトル"]）
+[2026-09-18 02:04:00]   価格200円設定OK
+[2026-09-18 02:04:03]   タグ入力OK
+[2026-09-18 02:04:08]   投稿完了: https://editor.note.com/notes/nf4b4d94bbb5c/publish/
+[2026-09-18 02:04:11] === 全投稿完了 ===
+[2026-09-18 02:04:11] 投稿済み: 11件
+[2026-09-18 02:04:11]   02_cost_simulation.md → https://editor.note.com/notes/n6fbdeb14df3a/publish/
+[2026-09-18 02:04:11]   03_black_shop_check.md → https://editor.note.com/notes/nf6aac2eef858/publish/
+[2026-09-18 02:04:11]   04_resume_template.md → https://editor.note.com/notes/ncf9a048ad279/publish/
+[2026-09-18 02:04:11]   05_salary_negotiation.md → https://editor.note.com/notes/nd1593b0f5063/publish/
+[2026-09-18 02:04:11]   06_delivery_sushi_start.md → https://editor.note.com/notes/n55f2e9dad24a/publish/
+[2026-09-18 02:04:11]   07_instagram_sushi.md → https://editor.note.com/notes/n9ac6e4950dc7/publish/
+[2026-09-18 02:04:11]   08_subsidy_guide.md → https://editor.note.com/notes/ndb5bffbb73a7/publish/
+[2026-09-18 02:04:11]   09_shari_recipe.md → https://editor.note.com/notes/n3860ab6063d7/publish/
+[2026-09-18 02:04:11]   10_knife_maintenance.md → https://editor.note.com/notes/n238ac2c894e7/publish/
+[2026-09-18 02:04:11]   11_30s_career_change.md → https://editor.note.com/notes/nd9b0e541fb03/publish/
+[2026-09-18 02:04:11]   12_school_visit_report.md → https://editor.note.com/notes/nf4b4d94bbb5c/publish/

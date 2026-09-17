@@ -2,10 +2,10 @@
   "cookies": [
     {
       "name": "_note_session_v5",
-      "value": "bd5960aeda78ae5076c7725aa5d6b766",
+      "value": "941fa0ca96107a12721b2cb70f11a27f",
       "domain": ".note.com",
       "path": "/",
-      "expires": 1792389214.433425,
+      "expires": 1797440187.1167138,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
