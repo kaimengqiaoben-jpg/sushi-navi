@@ -1,0 +1,19 @@
+---
+// GA_MEASUREMENT_ID が未設定のうちは何も出力しない（プレビュー環境を計測に混ぜないため）。
+// src/data/config.ts にIDを設定すると自動で有効化される。
+import { GA_MEASUREMENT_ID } from '../data/config';
+---
+
+{
+  GA_MEASUREMENT_ID && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+      <script
+        set:html={`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`}
+      />
+    </>
+  )
+}
