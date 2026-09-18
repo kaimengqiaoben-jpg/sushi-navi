@@ -1,8 +1,8 @@
 // note有料記事ハブ用データ。SITE_DESIGN.md ⑧「note導線」参照。
 //
 // 2026-09-10: note.com上の実際の公開状態を確認し、確認できたものだけ url を設定済み。
-// アカウント: https://note.com/modern_roses2643 （プロフィール名「寿司職人ナビ」＝旧サイト名のまま。
-// TODO: SUSHIDOブランドに合わせてnote側のプロフィールも更新すると導線が綺麗になる）
+// アカウント: https://note.com/modern_roses2643
+// 2026-09-18: プロフィール名・自己紹介を「鮨道 SUSHIDO」ブランドに更新済み（連携確認・修正済み）。
 //
 // 注記: 02・03（費用シミュレーション／ブラック店チェックリスト）は投稿時に有料設定が失敗し、
 // 実際には無料公開になっている（note_post_log.txt で確認）。price は実際の価格に合わせてある。
@@ -20,6 +20,24 @@ export interface NoteArticle {
 }
 
 export const noteArticles: NoteArticle[] = [
+  {
+    title: '現役寿司職人が「鮨道」というサイトを始めました',
+    price: '無料',
+    url: 'https://note.com/modern_roses2643/n/n71a90f2aab8d',
+    category: 'free',
+  },
+  {
+    title: '寿司屋で使われる符丁10選【がり・あがり・むらさき…】',
+    price: '無料',
+    url: 'https://note.com/modern_roses2643/n/n7e5c25c29895',
+    category: 'free',
+  },
+  {
+    title: '現役寿司職人が実際に使っている柳刃包丁、3本の使い分け',
+    price: '無料',
+    url: 'https://note.com/modern_roses2643/n/n75a9d7d261db',
+    category: 'free',
+  },
   {
     title: '未経験から寿司職人になる方法【完全ロードマップ】',
     price: '無料',
