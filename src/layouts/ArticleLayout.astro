@@ -14,9 +14,10 @@ interface Props {
   hero?: string;
   heroAlt?: string;
   faq?: { q: string; a: string }[];
+  tags?: string[];
 }
 
-const { title, description, category, slug, publishedAt, updatedAt, hero, heroAlt, faq } = Astro.props;
+const { title, description, category, slug, publishedAt, updatedAt, hero, heroAlt, faq, tags = [] } = Astro.props;
 const cat = categories[category];
 const canonicalPath = `/${category}/${slug}/`;
 const pageUrl = new URL(canonicalPath, Astro.site).toString();
@@ -102,6 +103,20 @@ const dateFmt = (d: Date) => d.toLocaleDateString('ja-JP', { year: 'numeric', mo
     <div class="prose prose-sushido max-w-none prose-headings:font-serif prose-headings:text-ink prose-p:text-ink-70 prose-p:leading-loose prose-a:text-accent">
       <slot />
     </div>
+
+    {
+      tags.length > 0 && (
+        <ul class="flex flex-wrap gap-2 mt-10">
+          {tags.map((t) => (
+            <li>
+              <a href={`/tag/${encodeURIComponent(t)}/`} class="text-xs text-ink-70 border border-line px-3 py-1.5 hover:bg-paper-alt">
+                #{t}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
 
     <div class="mt-14">
       <AuthorBox />
