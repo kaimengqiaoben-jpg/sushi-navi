@@ -40,10 +40,16 @@ def parse(filepath: Path):
 
 
 def type_markdown(page, element, text):
-    page.evaluate(
-        """([el, txt]) => { el.focus(); document.execCommand('insertText', false, txt); }""",
-        [element.element_handle(), text],
-    )
+    """1行ずつ実キー入力してnoteのライブmarkdown変換(##→見出し等)を発火させる。
+    execCommand('insertText')による一括挿入は変換が効かず記号がそのまま残るため使わない。"""
+    element.click()
+    lines = text.split("\n")
+    for i, line in enumerate(lines):
+        if line:
+            page.keyboard.type(line, delay=8)
+        if i < len(lines) - 1:
+            page.keyboard.press("Enter")
+        time.sleep(0.03)
     time.sleep(0.5)
 
 

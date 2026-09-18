@@ -148,4 +148,4 @@ STAR形式（状況→課題→行動→結果）で答えると説得力が増�
 
 ---
 
-*寿司職人ナビ：https://sushi-blog-five.vercel.app*
+*鮨道 SUSHIDO：https://sushi-blog-five.vercel.app*

@@ -27,3 +27,7 @@ note_session.json
 note_debug*.png
 __pycache__/
 note_debug*.png
+edit_done_*.png
+note_edit_*.png
+note_new_check*.png
+note_typing_test.png

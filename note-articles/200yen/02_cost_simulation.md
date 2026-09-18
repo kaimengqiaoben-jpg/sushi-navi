@@ -122,4 +122,4 @@ A. まずハローワークで給付金の確認を先に行い、給付金受�
 
 ---
 
-*寿司職人ナビ：https://sushi-blog-five.vercel.app*
+*鮨道 SUSHIDO：https://sushi-blog-five.vercel.app*

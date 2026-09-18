@@ -416,14 +416,23 @@ def post_to_note(page, article: dict) -> str:
 
 
 def _type_markdown(page, element, text: str):
-    """マークダウンテキストを入力エリアに入力"""
-    page.evaluate(
-        """([el, txt]) => {
-            el.focus();
-            document.execCommand('insertText', false, txt);
-        }""",
-        [element.element_handle(), text]
-    )
+    """マークダウンテキストを入力エリアに入力。
+
+    以前は execCommand('insertText') で一括挿入していたが、これだと
+    noteエディタの「##→見出し」「**text**→太字」等のライブ変換
+    （1文字ずつのキー入力を監視している）が発火せず、記号がそのまま
+    文字として残ってしまうバグがあった（2026-09投稿分で発覚）。
+    real keyboard入力（1行ずつ Enter を挟みながら type）に変更し、
+    ライブ変換を正しく発火させる。
+    """
+    element.click()
+    lines = text.split("\n")
+    for i, line in enumerate(lines):
+        if line:
+            page.keyboard.type(line, delay=8)
+        if i < len(lines) - 1:
+            page.keyboard.press("Enter")
+        time.sleep(0.03)
     time.sleep(0.5)
 
 

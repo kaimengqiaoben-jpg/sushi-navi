@@ -116,4 +116,4 @@
 ---
 
 *寿司職人転職塾 | 月額980円で全12回の転職サポートコンテンツを読み放題*
-*寿司職人ナビ：https://sushi-blog-five.vercel.app*
+*鮨道 SUSHIDO：https://sushi-blog-five.vercel.app*

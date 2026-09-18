@@ -87,4 +87,4 @@
 
 ---
 
-*寿司職人ナビ：https://sushi-blog-five.vercel.app*
+*鮨道 SUSHIDO：https://sushi-blog-five.vercel.app*

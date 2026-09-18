@@ -117,4 +117,4 @@
 ---
 
 *このマガジンは月額980円のサブスクです。Week1は無料で全文読めます。*
-*寿司職人ナビ：https://sushi-blog-five.vercel.app*
+*鮨道 SUSHIDO：https://sushi-blog-five.vercel.app*

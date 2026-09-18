@@ -117,6 +117,6 @@ Week1からここまで読んでくれたあなたは、寿司職人転職に必
 
 ---
 
-**寿司職人ナビ：https://sushi-blog-five.vercel.app**
+**鮨道 SUSHIDO：https://sushi-blog-five.vercel.app**
 
 *このマガジンが役に立ったら、SNSでシェアして仲間に教えてあげてください。*
