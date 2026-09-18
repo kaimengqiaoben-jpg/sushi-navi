@@ -33,5 +33,10 @@ note_new_check*.png
 note_typing_test.png
 x_session.json
 threads_session.json
+instagram_session.json
+higgsfield_key.json
 x_debug*.png
 threads_debug*.png
+ig_debug*.png
+instagram-posts/*.mp4
+instagram-posts/*.mov
