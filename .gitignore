@@ -26,3 +26,4 @@ pnpm-debug.log*
 note_session.json
 note_debug*.png
 __pycache__/
+note_debug*.png

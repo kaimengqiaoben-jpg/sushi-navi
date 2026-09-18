@@ -277,3 +277,15 @@ Call log:
 [2026-09-18 02:04:11]   10_knife_maintenance.md → https://editor.note.com/notes/n238ac2c894e7/publish/
 [2026-09-18 02:04:11]   11_30s_career_change.md → https://editor.note.com/notes/nd9b0e541fb03/publish/
 [2026-09-18 02:04:11]   12_school_visit_report.md → https://editor.note.com/notes/nf4b4d94bbb5c/publish/
+[2026-09-18 17:52:15]   投稿開始: 寿司職人転職完全ガイド｜スクール選び・費用・就職まで
+[2026-09-18 17:52:19]   現在のURL: https://editor.note.com/notes/n5912b56150be/edit/
+[2026-09-18 17:52:19]   タイトル入力OK（[placeholder="記事タイトル"]）
+[2026-09-18 17:52:28]   価格500円設定OK
+[2026-09-18 17:52:31]   タグ入力OK
+[2026-09-18 17:52:36]   投稿完了: https://editor.note.com/notes/n5912b56150be/publish/
+[2026-09-18 17:53:38]   投稿開始: 寿司職人として海外移住・海外就職する完全マニュアル
+[2026-09-18 17:53:42]   現在のURL: https://editor.note.com/notes/nda325c873135/edit/
+[2026-09-18 17:53:42]   タイトル入力OK（[placeholder="記事タイトル"]）
+[2026-09-18 17:53:52]   価格1000円設定OK
+[2026-09-18 17:53:54]   タグ入力OK
+[2026-09-18 17:53:59]   投稿完了: https://editor.note.com/notes/nda325c873135/publish/

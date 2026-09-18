@@ -1,161 +1,129 @@
 [
   {
     "type": "blog",
-    "file": "career-30s.html",
-    "title": "30代から寿司職人に転職できる？成功事例と現実を解説",
-    "url": "https://sushi-blog-five.vercel.app/articles/career-30s.html",
+    "slug": "career/how-to-become",
+    "title": "寿司職人になる方法｜未経験からのルートを現役が比較する",
+    "url": "https://sushi-blog-five.vercel.app/career/how-to-become/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "career-change-beginner.html",
-    "title": "未経験から寿司職人になる3つのルート【完全ガイド2025年版】",
-    "url": "https://sushi-blog-five.vercel.app/articles/career-change-beginner.html",
+    "slug": "career/salary",
+    "title": "寿司職人の給料の実態｜年数別・業態別の目安と上げ方",
+    "url": "https://sushi-blog-five.vercel.app/career/salary/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "daily-work.html",
-    "title": "寿司職人の1日・仕事内容をリアルに公開【きつい？楽しい？】",
-    "url": "https://sushi-blog-five.vercel.app/articles/daily-work.html",
+    "slug": "career/apprenticeship-years",
+    "title": "寿司職人の修行は何年必要か｜「10年」の実際と短縮できる部分",
+    "url": "https://sushi-blog-five.vercel.app/career/apprenticeship-years/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "delivery-sushi-business.html",
-    "title": "出張寿司で副業・独立する方法【月10万円の稼ぎ方2025年版】",
-    "url": "https://sushi-blog-five.vercel.app/articles/delivery-sushi-business.html",
+    "slug": "career/daily-routine",
+    "title": "寿司職人の1日｜出勤から閉店までの実際",
+    "url": "https://sushi-blog-five.vercel.app/career/daily-routine/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "independent-guide.html",
-    "title": "寿司職人として独立・開業する方法【費用・手順・成功事例2025】",
-    "url": "https://sushi-blog-five.vercel.app/articles/independent-guide.html",
+    "slug": "career/beginner-career-change",
+    "title": "未経験・社会人が寿司職人への一歩を踏み出す手順",
+    "url": "https://sushi-blog-five.vercel.app/career/beginner-career-change/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "knife-recommend.html",
-    "title": "寿司職人が使う包丁おすすめ7選【初心者〜プロ別2025年版】",
-    "url": "https://sushi-blog-five.vercel.app/articles/knife-recommend.html",
+    "slug": "career/from-30s",
+    "title": "30代から寿司職人に転職できるか｜現実と進め方",
+    "url": "https://sushi-blog-five.vercel.app/career/from-30s/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "license-guide.html",
-    "title": "寿司職人に必要な資格・免許まとめ【取得方法と費用2025】",
-    "url": "https://sushi-blog-five.vercel.app/articles/license-guide.html",
+    "slug": "career/women",
+    "title": "女性が寿司職人になるには｜現状と店選びの考え方",
+    "url": "https://sushi-blog-five.vercel.app/career/women/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "no-apprenticeship.html",
-    "title": "修行なしで寿司職人になれる？スクール・回転寿司ルートを解説",
-    "url": "https://sushi-blog-five.vercel.app/articles/no-apprenticeship.html",
+    "slug": "career/license",
+    "title": "寿司職人に必要な資格・免許｜働くとき・独立するとき",
+    "url": "https://sushi-blog-five.vercel.app/career/license/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "overseas-sushi-chef.html",
-    "title": "寿司職人として海外就職・移住する方法【2025年版】",
-    "url": "https://sushi-blog-five.vercel.app/articles/overseas-sushi-chef.html",
+    "slug": "tools/knife-recommend",
+    "title": "柳刃包丁のおすすめの選び方｜価格帯別の考え方",
+    "url": "https://sushi-blog-five.vercel.app/tools/knife-recommend/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "school-cost.html",
-    "title": "寿司スクール費用完全ガイド【相場・安くする方法2025年版】",
-    "url": "https://sushi-blog-five.vercel.app/articles/school-cost.html",
+    "slug": "tools/essential-tools",
+    "title": "現役寿司職人が実際に使っている道具一覧｜板場の道具を全部見せます",
+    "url": "https://sushi-blog-five.vercel.app/tools/essential-tools/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "school-inshokujin.html",
-    "title": "飲食人大学の評判・口コミ・費用を徹底レビュー【2025年版】",
-    "url": "https://sushi-blog-five.vercel.app/articles/school-inshokujin.html",
+    "slug": "tools/samue-uniform",
+    "title": "作務衣・白衣・履物の選び方｜洗濯と耐久性で選ぶ",
+    "url": "https://sushi-blog-five.vercel.app/tools/samue-uniform/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "school-online.html",
-    "title": "寿司オンラインスクールおすすめ比較【2025年版・自宅で学べる】",
-    "url": "https://sushi-blog-five.vercel.app/articles/school-online.html",
+    "slug": "overseas/how-to-work-abroad",
+    "title": "海外で寿司職人として働く方法｜ルート・ビザ・給料の全体像",
+    "url": "https://sushi-blog-five.vercel.app/overseas/how-to-work-abroad/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "school-sushi-academy.html",
-    "title": "寿司アカデミーの評判・口コミ・費用を徹底レビュー【2025年版】",
-    "url": "https://sushi-blog-five.vercel.app/articles/school-sushi-academy.html",
+    "slug": "management/independence",
+    "title": "寿司屋を開業する方法｜資金・物件・許可・原価の基本",
+    "url": "https://sushi-blog-five.vercel.app/management/independence/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "school-tokyo-sushi.html",
-    "title": "東京すし和食料理学院の評判・口コミ・費用【2025年版】",
-    "url": "https://sushi-blog-five.vercel.app/articles/school-tokyo-sushi.html",
+    "slug": "management/delivery-business",
+    "title": "出張寿司で副業・独立する方法｜始め方と収入の目安",
+    "url": "https://sushi-blog-five.vercel.app/management/delivery-business/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "school-tsuji.html",
-    "title": "辻調理師専門学校の評判・口コミ・費用【2025年版】",
-    "url": "https://sushi-blog-five.vercel.app/articles/school-tsuji.html",
+    "slug": "career/school/compare",
+    "title": "寿司スクールの選び方｜比較すべき3つの基準と失敗パターン",
+    "url": "https://sushi-blog-five.vercel.app/career/school/compare/",
     "status": "pending",
     "posted_url": null
   },
   {
     "type": "blog",
-    "file": "sushi-chef-salary.html",
-    "title": "寿司職人の年収はいくら？修行中〜独立後まで全部教えます",
-    "url": "https://sushi-blog-five.vercel.app/articles/sushi-chef-salary.html",
-    "status": "pending",
-    "posted_url": null
-  },
-  {
-    "type": "blog",
-    "file": "sushi-school-compare.html",
-    "title": "【2025年最新】寿司スクールおすすめ比較ランキング",
-    "url": "https://sushi-blog-five.vercel.app/articles/sushi-school-compare.html",
-    "status": "pending",
-    "posted_url": null
-  },
-  {
-    "type": "blog",
-    "file": "sushi-tools-amazon.html",
-    "title": "寿司職人の道具・必需品おすすめ20選【Amazonで買える】",
-    "url": "https://sushi-blog-five.vercel.app/articles/sushi-tools-amazon.html",
-    "status": "pending",
-    "posted_url": null
-  },
-  {
-    "type": "blog",
-    "file": "sushi-uniform-amazon.html",
-    "title": "寿司職人の髪型・整髪料おすすめまとめ【2025年版】",
-    "url": "https://sushi-blog-five.vercel.app/articles/sushi-uniform-amazon.html",
-    "status": "pending",
-    "posted_url": null
-  },
-  {
-    "type": "blog",
-    "file": "women-sushi-chef.html",
-    "title": "女性が寿司職人になれる？現役女性シェフのリアルな話【2025年版】",
-    "url": "https://sushi-blog-five.vercel.app/articles/women-sushi-chef.html",
+    "slug": "career/school/cost",
+    "title": "寿司スクールの費用と給付金の使い方｜実質負担を下げる方法",
+    "url": "https://sushi-blog-five.vercel.app/career/school/cost/",
     "status": "pending",
     "posted_url": null
   }

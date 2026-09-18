@@ -44,8 +44,18 @@ export const noteArticles: NoteArticle[] = [
     url: 'https://note.com/modern_roses2643/n/nb173df126476',
     category: 'free',
   },
-  { title: '寿司職人転職完全ガイド｜スクール選び・費用・就職まで', price: '500円', url: null, category: 'single' },
-  { title: '寿司職人として海外移住・海外就職する完全マニュアル', price: '1,000円', url: null, category: 'single' },
+  {
+    title: '寿司職人転職完全ガイド｜スクール選び・費用・就職まで',
+    price: '500円',
+    url: 'https://note.com/modern_roses2643/n/n5912b56150be',
+    category: 'single',
+  },
+  {
+    title: '寿司職人として海外移住・海外就職する完全マニュアル',
+    price: '1,000円',
+    url: 'https://note.com/modern_roses2643/n/nda325c873135',
+    category: 'single',
+  },
   { title: '寿司職人の面接で落ちない答え方【想定問答10問テンプレート付き】', price: '200円', url: null, category: 'single' },
   {
     title: '寿司スクール費用シミュレーション：給付金使うと実質いくら？',
