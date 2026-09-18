@@ -20,7 +20,7 @@ function walk(dir) {
 // 1. 有効なパスの集合を作る
 const validPaths = new Set([
   '/', '/articles/', '/glossary/', '/about/', '/note/', '/contact/',
-  '/disclosure/', '/privacy/', '/terms/', '/editorial-policy/',
+  '/disclosure/', '/privacy/', '/terms/', '/editorial-policy/', '/tools/db/',
   '/technique/', '/career/', '/tools/', '/overseas/', '/management/',
 ]);
 

@@ -1,0 +1,42 @@
+[
+  {
+    "category": "柳刃包丁",
+    "name": "白2（白紙二号）",
+    "size": "尺（約30cm）",
+    "price": "8万円",
+    "note": "研ぎやすく切れ味が鋭い炭素鋼。繊細に見せたい白身・光り物向き",
+    "articleHref": "/tools/yanagiba-size/"
+  },
+  {
+    "category": "柳刃包丁",
+    "name": "V10",
+    "size": "尺（約30cm）",
+    "price": "8万円",
+    "note": "硬度が高く切れ味の持続が長い。研ぐ回数を減らしたい繁忙日向き",
+    "articleHref": "/tools/yanagiba-size/"
+  },
+  {
+    "category": "柳刃包丁",
+    "name": "銀3（銀紙三号）",
+    "size": "8寸（約24cm）",
+    "price": "3万円",
+    "note": "ステンレス系で欠けにくい。取り回し優先の普段使い用",
+    "articleHref": "/tools/yanagiba-size/"
+  },
+  {
+    "category": "出刃・船行包丁",
+    "name": "船行包丁（白3）",
+    "size": "—",
+    "price": "—",
+    "note": "出刃の代わりに使用。薄く軽い片刃の万能型。頭を落とす・三枚おろし・皮引きを1本で",
+    "articleHref": "/tools/deba-osusume/"
+  },
+  {
+    "category": "砥石",
+    "name": "セラミック系（人造砥石）",
+    "size": "—",
+    "price": "—",
+    "note": "粒度が安定し研ぎ上がりの再現性が高い。天然砥石は不使用",
+    "articleHref": "/tools/whetstone-osusume/"
+  }
+]

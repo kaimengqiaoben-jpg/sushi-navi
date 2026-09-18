@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import products from '../../../data/products.json';
+
+const categories = [...new Set(products.map((p) => p.category))];
+---
+
+<BaseLayout
+  title="道具データベース"
+  description="現役寿司職人が実際に使っている包丁・砥石などの道具を、カテゴリー横断で一覧・比較できるページです。"
+>
+  <section class="mx-auto max-w-4xl px-5 py-20">
+    <p class="font-display italic text-gold text-sm tracking-widest mb-4">TOOLS DB</p>
+    <h1 class="font-serif text-3xl md:text-4xl text-ink mb-6">道具データベース</h1>
+    <p class="text-ink-70 leading-loose max-w-2xl mb-12">
+      現役寿司職人が実際に使っている道具を、カテゴリー横断で一覧にしています。詳しい選び方・使い分けの理由は、各行の「詳しく見る」から記事へどうぞ。
+    </p>
+
+    {
+      categories.map((cat) => (
+        <div class="mb-14">
+          <h2 class="font-serif text-xl text-ink mb-4 border-b border-line pb-2">{cat}</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="text-left text-ink-40 text-xs tracking-wide border-b border-line">
+                  <th class="py-2 pr-4">品名</th>
+                  <th class="py-2 pr-4">サイズ</th>
+                  <th class="py-2 pr-4">価格帯</th>
+                  <th class="py-2 pr-4">メモ</th>
+                  <th class="py-2"> </th>
+                </tr>
+              </thead>
+              <tbody>
+                {products
+                  .filter((p) => p.category === cat)
+                  .map((p) => (
+                    <tr class="border-b border-line align-top">
+                      <td class="py-3 pr-4 text-ink font-medium whitespace-nowrap">{p.name}</td>
+                      <td class="py-3 pr-4 text-ink-70 whitespace-nowrap">{p.size}</td>
+                      <td class="py-3 pr-4 text-ink-70 whitespace-nowrap">{p.price}</td>
+                      <td class="py-3 pr-4 text-ink-70">{p.note}</td>
+                      <td class="py-3">
+                        <a href={p.articleHref} class="text-accent text-xs border-b border-accent whitespace-nowrap">
+                          詳しく見る →
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))
+    }
+
+    <p class="text-ink-40 text-xs mt-4">
+      掲載しているのは運営者が実際に使っている道具です。購入リンクは記事側の準備が整い次第、順次追加します。
+    </p>
+
+    <p class="mt-10 text-sm">
+      <a href="/tools/" class="text-accent border-b border-accent">道具カテゴリー一覧へ戻る →</a>
+    </p>
+  </section>
+</BaseLayout>
