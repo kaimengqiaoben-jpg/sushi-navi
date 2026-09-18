@@ -31,3 +31,7 @@ edit_done_*.png
 note_edit_*.png
 note_new_check*.png
 note_typing_test.png
+x_session.json
+threads_session.json
+x_debug*.png
+threads_debug*.png
