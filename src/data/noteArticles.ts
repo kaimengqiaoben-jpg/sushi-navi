@@ -63,6 +63,18 @@ export const noteArticles: NoteArticle[] = [
     category: 'free',
   },
   {
+    title: '寿司職人なのに、出刃包丁を持ってない理由',
+    price: '無料',
+    url: 'https://note.com/modern_roses2643/n/n837aaa42c3de',
+    category: 'free',
+  },
+  {
+    title: '寿司職人に向いてる人、向いてない人',
+    price: '無料',
+    url: 'https://note.com/modern_roses2643/n/n7940d5489114',
+    category: 'free',
+  },
+  {
     title: '寿司職人転職完全ガイド｜スクール選び・費用・就職まで',
     price: '500円',
     url: 'https://note.com/modern_roses2643/n/n5912b56150be',
