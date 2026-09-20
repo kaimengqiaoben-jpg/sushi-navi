@@ -45,7 +45,9 @@ x_thread_status.json
 x_delete_log.txt
 x_posts_review.json
 youtube_session.json
-youtube-scripts/*.mp4
-youtube-scripts/*.mp3
-youtube-scripts/*.jpg
-youtube-scripts/*.png
+youtube-scripts/assets/*.mp4
+youtube-scripts/assets/*.mp3
+youtube-scripts/assets/*.jpg
+youtube-scripts/assets/*.png
+youtube-scripts/output/*.mp4
+_concat_list.txt
