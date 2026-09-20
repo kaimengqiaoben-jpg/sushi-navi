@@ -1,0 +1,16 @@
+---
+// ADSENSE_CLIENT_ID が未設定のうちは何も出力しない。
+// src/data/config.ts にIDを設定すると自動で有効化される。
+// 審査前でもタグ自体は設置しておいて問題ない（むしろ審査の前提になることが多い）。
+import { ADSENSE_CLIENT_ID } from '../data/config';
+---
+
+{
+  ADSENSE_CLIENT_ID && (
+    <script
+      async
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+      crossorigin="anonymous"
+    />
+  )
+}

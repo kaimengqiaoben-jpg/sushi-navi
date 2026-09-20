@@ -11,3 +11,10 @@ export const GA_MEASUREMENT_ID: string | null = 'G-8Q6G703G6E';
 // 180日間売上が無いと失効する仕組みなので、Amazonアソシエイトの管理画面
 // （associates.amazon.co.jp）でステータスを確認してから使うこと。
 export const AMAZON_ASSOCIATE_TAG: string | null = 'sushinavi-22';
+
+// Google AdSenseのパブリッシャーID。
+// 審査待ちの間もタグ自体は出しておいて問題ない（審査に必要な場合もある）。
+// AdSenseの管理画面（adsense.google.com）で
+// このサイト（sushi-blog-five.vercel.app、または取得後はsushido.jp）を
+// 「サイト」に追加して審査状況を確認すること。
+export const ADSENSE_CLIENT_ID: string | null = 'ca-pub-6253147532269621';
