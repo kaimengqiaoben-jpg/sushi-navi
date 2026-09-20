@@ -17,6 +17,7 @@ faq:
 
 import ExperienceNote from '../../components/ExperienceNote.astro';
 import AffiliateCTA from '../../components/AffiliateCTA.astro';
+import { amazonSearchUrl } from '../../lib/affiliate';
 
 出刃包丁は「魚をおろす」ための道具です。柳刃ほど仕上がりの美しさに直結しませんが、選び方を外すと毎日の仕込みで疲れるか、刃を欠き続けることになります。
 
@@ -77,6 +78,12 @@ import AffiliateCTA from '../../components/AffiliateCTA.astro';
 - **中子（なかご）**：柄の中に金属がしっかり入っているか。安価品は中子が短く、力仕事で緩む
 - **刃付け**：片刃なので、右利きは右面に切刃、左利きは左利き用を。左利き用は取り寄せが基本
 - **柄の素材**：朴（ほお）＋水牛口輪が定番。濡れる作業が多いので、口輪があると柄の割れを防げる
+
+<AffiliateCTA
+  productName="出刃包丁・船行包丁"
+  amazonUrl={amazonSearchUrl('出刃包丁')}
+  priceNote="サイズ・鋼材で絞り込んで探せます"
+/>
 
 ## 関連記事
 

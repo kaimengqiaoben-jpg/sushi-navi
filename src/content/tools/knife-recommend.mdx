@@ -17,6 +17,7 @@ faq:
 
 import ExperienceNote from '../../components/ExperienceNote.astro';
 import AffiliateCTA from '../../components/AffiliateCTA.astro';
+import { amazonSearchUrl } from '../../lib/affiliate';
 
 柳刃包丁は寿司職人の主力の道具です。ここでは「どういう基準で選ぶか」を価格帯別に整理します。サイズ（寸）の選び方は[柳刃包丁は何寸を買うべきか](/tools/yanagiba-size/)を先に読んでください。
 
@@ -76,6 +77,12 @@ import AffiliateCTA from '../../components/AffiliateCTA.astro';
 最初から3本そろえる必要はありません。まず1本を研ぎ込んで慣れてから、「研ぎの手間を減らしたい」「もっと切れ味を追求したい」など自分の不満が出てきたタイミングで、それを解決する鋼材の2本目を足す、という順番が現実的です。長さを変えているのは、長いストロークを優先する主力（尺）と、取り回し優先で気軽に使う1本（8寸）という役割分けのためです。
 
 </ExperienceNote>
+
+<AffiliateCTA
+  productName="柳刃包丁（価格帯別）"
+  amazonUrl={amazonSearchUrl('柳刃包丁')}
+  priceNote="鋼材・サイズで絞り込んで探せます"
+/>
 
 ## 関連記事
 

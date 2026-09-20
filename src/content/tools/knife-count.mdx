@@ -17,6 +17,7 @@ faq:
 
 import ExperienceNote from '../../components/ExperienceNote.astro';
 import AffiliateCTA from '../../components/AffiliateCTA.astro';
+import { amazonSearchUrl } from '../../lib/affiliate';
 
 寿司職人を目指すと決めたとき、最初に迷うのが「包丁を何本買えばいいのか」です。道具屋に行くと何十種類も並んでいて、全部必要に見えてきます。
 
@@ -106,6 +107,12 @@ import AffiliateCTA from '../../components/AffiliateCTA.astro';
 見習いのうちに特殊包丁（身卸し、鰻裂き、ふぐ引きなど）を先に買う必要はありません。それらは扱う魚種や店の専門性が決まってから、必要に応じて揃えるものです。
 
 包丁ケース（差し・巻き）は3本を持ち運ぶ時点で必要になります。道具の保護と衛生の面で、包丁と同時に用意しておくと安心です。
+
+<AffiliateCTA
+  productName="包丁ケース（差し・巻き）"
+  amazonUrl={amazonSearchUrl('包丁ケース 和包丁')}
+  priceNote="3本を持ち運ぶタイミングで必要になります"
+/>
 
 ## 関連記事
 

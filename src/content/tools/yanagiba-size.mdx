@@ -17,6 +17,7 @@ faq:
 
 import ExperienceNote from '../../components/ExperienceNote.astro';
 import AffiliateCTA from '../../components/AffiliateCTA.astro';
+import { amazonSearchUrl } from '../../lib/affiliate';
 
 柳刃包丁を買うとき、鋼材や産地の前にまず決めるのがサイズ（寸）です。ここを外すと毎日の仕事で地味にストレスになります。
 
@@ -79,6 +80,12 @@ import AffiliateCTA from '../../components/AffiliateCTA.astro';
 - 手入れの手間を最小にしたいならステンレス系（銀3など）
 
 鋼材別の詳しい比較は[柳刃包丁のおすすめの選び方](/tools/knife-recommend/)で扱っています。
+
+<AffiliateCTA
+  productName="柳刃包丁（8寸〜8寸5分）"
+  amazonUrl={amazonSearchUrl('柳刃包丁 8寸5分')}
+  priceNote="最初の1本の目安サイズで探す場合はこちら"
+/>
 
 ## よくある質問
 

@@ -16,6 +16,7 @@ faq:
 ---
 
 import AffiliateCTA from '../../components/AffiliateCTA.astro';
+import { amazonSearchUrl } from '../../lib/affiliate';
 
 着るものは毎日洗って毎日着ます。だから「1着の良さ」より「洗濯に耐えて枚数を回せるか」で選びます。
 
@@ -59,6 +60,12 @@ import AffiliateCTA from '../../components/AffiliateCTA.astro';
 - 爪は常に短く
 - 香りの強い整髪料・香水・柔軟剤は避ける（食事の邪魔になる）
 - 手荒れケア（水仕事・冷蔵庫作業が多い。無香料のハンドクリーム）
+
+<AffiliateCTA
+  productName="作務衣・厨房シューズ"
+  amazonUrl={amazonSearchUrl('作務衣 厨房シューズ')}
+  priceNote="洗濯耐性・防滑性で選ぶならこちら"
+/>
 
 ## 関連記事
 
