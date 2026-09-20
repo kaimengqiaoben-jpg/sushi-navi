@@ -18,3 +18,10 @@ export const AMAZON_ASSOCIATE_TAG: string | null = 'sushinavi-22';
 // このサイト（sushi-blog-five.vercel.app、または取得後はsushido.jp）を
 // 「サイト」に追加して審査状況を確認すること。
 export const ADSENSE_CLIENT_ID: string | null = 'ca-pub-6253147532269621';
+
+// お問い合わせフォームの送信先（Formspree）。
+// 1. https://formspree.io で無料アカウント作成（メールアドレス1つでOK、公開されない）
+// 2. 「New Form」でフォームを作成すると、確認メールが届く→リンクをクリックして認証
+// 3. ダッシュボードに表示される「Form ID」（例: xanyzabc のような文字列。
+//    エンドポイントは https://formspree.io/f/xanyzabc という形）をここに設定
+export const CONTACT_FORM_ID: string | null = null;

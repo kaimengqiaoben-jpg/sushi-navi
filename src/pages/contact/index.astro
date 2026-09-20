@@ -1,12 +1,10 @@
 ---
-// TODO(カイムさん): 問い合わせ用の連絡先を決めてください。
-// - 案A: 公開用に新規メールアドレスを作る（個人のGmail等はそのまま公開しない方が安全）
-// - 案B: Googleフォームを作って埋め込みリンクに差し替える
-// 決まったら下記 CONTACT_EMAIL / CONTACT_FORM_URL を書き換えてください。
+// お問い合わせフォーム。送信先はFormspree（メールアドレス自体は非公開のまま運用できる）。
+// src/data/config.ts の CONTACT_FORM_ID を設定すると自動で有効化される。
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CONTACT_FORM_ID } from '../../data/config';
 
-const CONTACT_EMAIL: string | null = null; // TODO
-const CONTACT_FORM_URL: string | null = null; // TODO
+const formAction = CONTACT_FORM_ID ? `https://formspree.io/f/${CONTACT_FORM_ID}` : null;
 ---
 
 <BaseLayout title="お問い合わせ" description="鮨道 SUSHIDO へのお問い合わせページです。">
@@ -14,20 +12,36 @@ const CONTACT_FORM_URL: string | null = null; // TODO
     <p class="font-display italic text-gold text-sm tracking-widest mb-4">CONTACT</p>
     <h1 class="font-serif text-3xl md:text-4xl text-ink mb-10">お問い合わせ</h1>
 
-    <div class="prose prose-sushido max-w-none prose-p:text-ink-70 prose-p:leading-loose prose-a:text-accent">
-      <p>取材・広告掲載・記事内容に関するご連絡は、以下からお願いいたします。</p>
-
-      {
-        CONTACT_FORM_URL ? (
-          <p><a href={CONTACT_FORM_URL} target="_blank" rel="noopener">お問い合わせフォームはこちら</a></p>
-        ) : CONTACT_EMAIL ? (
-          <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
-        ) : (
-          <p class="text-ink-40 text-sm">（連絡先を準備中です）</p>
-        )
-      }
-
-      <p>運営者について詳しくは<a href="/about/">こちら</a>をご覧ください。</p>
+    <div class="prose prose-sushido max-w-none prose-p:text-ink-70 prose-p:leading-loose prose-a:text-accent mb-10">
+      <p>取材・広告掲載・記事内容に関するご連絡は、以下のフォームからお願いいたします。</p>
     </div>
+
+    {
+      formAction ? (
+        <form action={formAction} method="POST" class="space-y-5">
+          <div>
+            <label for="name" class="block text-sm text-ink-70 mb-1">お名前</label>
+            <input type="text" name="name" id="name" required class="w-full border border-line px-3 py-2 bg-paper text-ink" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm text-ink-70 mb-1">メールアドレス</label>
+            <input type="email" name="email" id="email" required class="w-full border border-line px-3 py-2 bg-paper text-ink" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm text-ink-70 mb-1">お問い合わせ内容</label>
+            <textarea name="message" id="message" rows={6} required class="w-full border border-line px-3 py-2 bg-paper text-ink" />
+          </div>
+          <button type="submit" class="border border-ink px-6 py-2.5 text-sm hover:bg-ink hover:text-paper transition-colors">
+            送信する
+          </button>
+        </form>
+      ) : (
+        <p class="text-ink-40 text-sm">（フォーム準備中です）</p>
+      )
+    }
+
+    <p class="mt-10 text-sm">
+      運営者について詳しくは<a href="/about/" class="text-accent border-b border-accent">こちら</a>をご覧ください。
+    </p>
   </article>
 </BaseLayout>
