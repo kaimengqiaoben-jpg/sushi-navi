@@ -45,6 +45,24 @@ export const noteArticles: NoteArticle[] = [
     category: 'free',
   },
   {
+    title: '寿司職人の1日、実際どう過ぎてるか書きます',
+    price: '無料',
+    url: 'https://note.com/modern_roses2643/n/neb4d077d8a50',
+    category: 'free',
+  },
+  {
+    title: '寿司職人の給料、ステージ別に正直に書きます',
+    price: '無料',
+    url: 'https://note.com/modern_roses2643/n/n8f2a2d1b5ac5',
+    category: 'free',
+  },
+  {
+    title: '「寿司職人は10年修行」って本当なのか、分解してみます',
+    price: '無料',
+    url: 'https://note.com/modern_roses2643/n/nae6a85b7dd11',
+    category: 'free',
+  },
+  {
     title: '寿司職人転職完全ガイド｜スクール選び・費用・就職まで',
     price: '500円',
     url: 'https://note.com/modern_roses2643/n/n5912b56150be',
