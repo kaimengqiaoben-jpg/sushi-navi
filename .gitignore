@@ -40,3 +40,12 @@ threads_debug*.png
 ig_debug*.png
 instagram-posts/*.mp4
 instagram-posts/*.mov
+x_thread_log.txt
+x_thread_status.json
+x_delete_log.txt
+x_posts_review.json
+youtube_session.json
+youtube-scripts/*.mp4
+youtube-scripts/*.mp3
+youtube-scripts/*.jpg
+youtube-scripts/*.png

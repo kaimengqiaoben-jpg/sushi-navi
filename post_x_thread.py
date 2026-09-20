@@ -45,7 +45,10 @@ def click_first_visible(page, selectors, label, timeout=4000):
         try:
             btn = page.locator(sel).first
             if btn.is_visible(timeout=timeout):
-                btn.click()
+                try:
+                    btn.click(timeout=5000)
+                except Exception:
+                    btn.click(force=True, timeout=5000)
                 return True
         except Exception:
             continue
@@ -53,12 +56,49 @@ def click_first_visible(page, selectors, label, timeout=4000):
     return False
 
 
+def safe_click(el, retries=3):
+    """透明なレイヤーに塞がれてクリックが弾かれる場合、Escapeで払ってから強制クリックする。"""
+    for attempt in range(retries):
+        try:
+            el.click(timeout=5000)
+            return True
+        except Exception:
+            try:
+                el.page.keyboard.press("Escape")
+            except Exception:
+                pass
+            time.sleep(0.5)
+    try:
+        el.click(force=True, timeout=5000)
+        return True
+    except Exception:
+        return False
+
+
+def dismiss_overlays(page):
+    """2段階認証の登録を促すバナーなど、コンポーザーを塞ぐオーバーレイを閉じる。"""
+    for sel in [
+        '[aria-label="Close"]',
+        '[aria-label="閉じる"]',
+        '[data-testid="app-bar-close"]',
+        '[aria-label="Dismiss"]',
+    ]:
+        try:
+            el = page.locator(sel).first
+            if el.is_visible(timeout=1500):
+                el.click()
+                time.sleep(0.5)
+        except Exception:
+            continue
+
+
 def post_thread(page, thread: dict) -> bool:
     tweets = thread["tweets"]
     log(f"投稿開始: {thread['title']}（{len(tweets)}件のスレッド）")
 
-    page.goto(X_COMPOSE_URL, wait_until="networkidle", timeout=60000)
-    time.sleep(2)
+    page.goto(X_COMPOSE_URL, wait_until="domcontentloaded", timeout=60000)
+    time.sleep(3)
+    dismiss_overlays(page)
     page.screenshot(path=str(BLOG_DIR / "x_debug.png"))
 
     for i, tweet_text in enumerate(tweets):
@@ -77,7 +117,11 @@ def post_thread(page, thread: dict) -> bool:
             page.screenshot(path=str(BLOG_DIR / f"x_debug_fail_{i}.png"))
             return False
 
-        box.click()
+        dismiss_overlays(page)
+        if not safe_click(box):
+            log(f"  {i+1}件目のテキストエリアをクリックできません")
+            page.screenshot(path=str(BLOG_DIR / f"x_debug_clickfail_{i}.png"))
+            return False
         time.sleep(0.3)
         page.keyboard.type(tweet_text, delay=12)
         time.sleep(0.5)
@@ -94,14 +138,16 @@ def post_thread(page, thread: dict) -> bool:
                 return False
             time.sleep(0.8)
 
-    time.sleep(1)
+    time.sleep(3)
+    dismiss_overlays(page)
     posted = click_first_visible(page, [
         '[data-testid="tweetButton"]',
-        'button:has-text("すべてポストする")',
-        'button:has-text("Post all")',
         '[data-testid="tweetButtonInline"]',
-        'button:has-text("ポストする")',
-    ], "投稿ボタン", timeout=5000)
+        'div[role="button"]:has-text("Post all")',
+        'div[role="button"]:has-text("すべてポストする")',
+        'div[role="button"]:has-text("Post")',
+        'div[role="button"]:has-text("ポストする")',
+    ], "投稿ボタン", timeout=15000)
     if not posted:
         page.screenshot(path=str(BLOG_DIR / "x_debug_postfail.png"))
         return False
