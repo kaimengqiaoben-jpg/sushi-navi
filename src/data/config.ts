@@ -24,4 +24,4 @@ export const ADSENSE_CLIENT_ID: string | null = 'ca-pub-6253147532269621';
 // 2. 「New Form」でフォームを作成すると、確認メールが届く→リンクをクリックして認証
 // 3. ダッシュボードに表示される「Form ID」（例: xanyzabc のような文字列。
 //    エンドポイントは https://formspree.io/f/xanyzabc という形）をここに設定
-export const CONTACT_FORM_ID: string | null = null;
+export const CONTACT_FORM_ID: string | null = 'xjykykpg';
