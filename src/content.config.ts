@@ -54,6 +54,9 @@ const glossary = defineCollection({
     reading: z.string().optional(),
     description: z.string(),
     relatedTerms: z.array(z.string()).default([]),
+    relatedArticles: z
+      .array(z.object({ href: z.string(), label: z.string() }))
+      .default([]),
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date(),
   }),

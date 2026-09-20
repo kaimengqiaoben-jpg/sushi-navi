@@ -58,6 +58,23 @@ const jsonLd = {
       )
     }
 
+    {
+      entry.data.relatedArticles.length > 0 && (
+        <div class="mt-8 border-t border-line pt-6">
+          <p class="text-xs tracking-widest text-ink-40 mb-3">この用語が出てくる記事</p>
+          <ul class="space-y-2">
+            {entry.data.relatedArticles.map((a) => (
+              <li>
+                <a href={a.href} class="text-sm text-accent border-b border-accent">
+                  {a.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+
     <p class="mt-10 text-sm">
       <a href="/glossary/" class="text-accent border-b border-accent">用語辞典の一覧へ</a>
     </p>
