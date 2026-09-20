@@ -81,6 +81,9 @@
 - 木のしゃもじ
 - うちわまたはハンディファン
 
+▶ 寿司桶（木製）：https://www.amazon.co.jp/s?k=寿司桶+木製&tag=sushinavi-22
+▶ ハンディファン：https://www.amazon.co.jp/s?k=ハンディファン&tag=sushinavi-22
+
 ### 手順
 
 1. 炊きたてのご飯を寿司桶に移す
@@ -106,6 +109,7 @@
 
 - タオルを巻いた容器に入れる
 - 電気保温ジャーを使う（プロの現場の定番）
+　▶ 見る：https://www.amazon.co.jp/s?k=シャリ+保温ジャー&tag=sushinavi-22
 - 少量ずつ作って使い切る
 
 ---
