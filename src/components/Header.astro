@@ -1,5 +1,7 @@
 ---
-import { categoryList } from '../data/categories';
+import { getVisibleCategories } from '../lib/content';
+
+const navCategories = await getVisibleCategories();
 ---
 
 <header class="border-b border-line bg-paper/95 backdrop-blur sticky top-0 z-40">
@@ -11,7 +13,7 @@ import { categoryList } from '../data/categories';
 
     <nav class="hidden md:flex items-center gap-6 text-sm">
       {
-        categoryList.map((c) => (
+        navCategories.map((c) => (
           <a href={c.path} class="text-ink-70 hover:text-accent transition-colors">
             {c.label}
           </a>
@@ -33,7 +35,7 @@ import { categoryList } from '../data/categories';
 
   <nav id="mobile-nav" class="md:hidden hidden border-t border-line px-5 py-3 flex flex-col gap-3 text-sm">
     {
-      categoryList.map((c) => (
+      navCategories.map((c) => (
         <a href={c.path} class="text-ink-70">
           {c.label}
         </a>

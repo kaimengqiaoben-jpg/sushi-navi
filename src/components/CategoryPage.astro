@@ -16,7 +16,7 @@ const entries = await getCollection(slug, isVisible);
 entries.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 ---
 
-<BaseLayout title={cat.label} description={cat.description}>
+<BaseLayout title={cat.label} description={cat.description} noindex={entries.length === 0}>
   <section class="border-b border-line">
     <div class="mx-auto max-w-3xl px-5 py-20 md:py-28">
       <p class="font-display italic text-gold text-sm tracking-widest mb-4">{cat.labelEn}</p>

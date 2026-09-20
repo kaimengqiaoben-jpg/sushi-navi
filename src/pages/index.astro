@@ -1,12 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { categoryList } from '../data/categories';
 import { author } from '../data/authors';
+import { getVisibleCategories } from '../lib/content';
 
 const title = '鮨道 SUSHIDO';
 const description = '現役寿司職人が、板場から書く。技術・道具・キャリア・海外・経営を、実務の言葉で記録する専門メディア。';
 
+const categoryList = await getVisibleCategories();
 const glossary = await getCollection('glossary');
 glossary.sort((a, b) => a.data.term.localeCompare(b.data.term, 'ja'));
 const glossaryPreview = glossary.slice(0, 12);

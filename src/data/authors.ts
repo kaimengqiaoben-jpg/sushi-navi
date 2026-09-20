@@ -7,8 +7,7 @@
 // 残りのTODO:
 // - qualifications: 資格（調理師免許・ふぐ調理師 等）があれば
 // - failureStory: 「大きな失敗はない」とのことなので空欄のまま。思い出したら追加可
-// - xUrl: X（旧Twitter）アカウントがあれば
-// - avatarImage: 顔写真・手元写真（顔出しOKになったので、プロフィール用の顔写真を優先して用意）
+// 2026-09-21: avatarImage・xUrl を設定済み（@wyp42、public/images/kaimu-avatar.jpg）。
 
 export const author = {
   name: 'kaimu',
@@ -27,6 +26,6 @@ export const author = {
   // note.com上で実際に記事を公開しているアカウント（プロフィール名は旧サイト名「寿司職人ナビ」のまま。
   // TODO: SUSHIDOブランドに合わせて更新すると導線が綺麗になる）
   noteUrl: 'https://note.com/modern_roses2643' as string | null,
-  xUrl: null as string | null, // TODO
-  avatarImage: null as string | null, // TODO: 顔写真を優先して用意（顔出しOK）
+  xUrl: 'https://x.com/wyp42' as string | null,
+  avatarImage: '/images/kaimu-avatar.jpg' as string | null,
 } as const;

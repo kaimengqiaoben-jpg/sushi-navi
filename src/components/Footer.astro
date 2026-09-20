@@ -1,5 +1,7 @@
 ---
-import { categoryList } from '../data/categories';
+import { getVisibleCategories } from '../lib/content';
+
+const categoryList = await getVisibleCategories();
 ---
 
 <footer class="border-t border-line mt-24 bg-paper-alt">
