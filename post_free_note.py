@@ -12,8 +12,7 @@ NOTE_NEW_URL = "https://note.com/notes/new"
 HASHTAGS = ["寿司職人", "鮨道", "SUSHIDO", "未経験転職", "寿司"]
 
 FILES = [
-    "07_deba_tsukawanai.md",
-    "08_muki_fumuki.md",
+    "09_shikaku_seiri.md",
 ]
 
 

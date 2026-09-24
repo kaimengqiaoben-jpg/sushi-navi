@@ -75,6 +75,12 @@ export const noteArticles: NoteArticle[] = [
     category: 'free',
   },
   {
+    title: '寿司職人に資格は必要？整理してみます',
+    price: '無料',
+    url: 'https://note.com/modern_roses2643/n/n422a33723e95',
+    category: 'free',
+  },
+  {
     title: '寿司職人転職完全ガイド｜スクール選び・費用・就職まで',
     price: '500円',
     url: 'https://note.com/modern_roses2643/n/n5912b56150be',
